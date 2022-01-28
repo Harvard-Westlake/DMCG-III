@@ -1,0 +1,71 @@
+DEATH METAL CHEESE GRATER III™tm
+Patent pending
+
+
+Joe. Joe Mama. That’s right. Joe Mama. Who are you? This is the plot of Independence day. A bunch of fucking aliens hijack the deathstar and beat up ANakin. Sheesh
+
+
+Lore:
+	You are a cheese. Cheese, in this world, is sentient and very agile. The agility of the cheese made them difficult for mice to hunt, so mice resorted to creating labyrinths of mouse traps used to capture the cheeses. If cheese does not make it to the end of the labyrinth, it will get moldy and die. Do not fail the cheese.
+
+	Mice have learned that direct consumption of substance is inefficient; instead, they summon a big mouth from the Astral Plane to consume cheese for them. 
+Basic Gameplay
+Overall Art Style: Animated, similar to given example 
+
+Default Player Sprite:
+
+Default Split Cheese Fragment :
+
+
+Game Lore, Objective:
+
+You are cheese, a cheese that has gained sentience and realizes that the world that the player lives in is a simulation. In the cheese’s world, the truth is written by the cheese and the damage and effects it receives due to hazards. (insert lore here)
+The objective in each level is to reach the doors in the level
+Single Player Controls
+	Big Cheese
+Press W to jump, A to go left, D to go right
+S explodes the cheese, splitting into 3 little cheeses with a (SOUND). The cheeses are sent right, left, and directly upwards. These controls will be disabled while split into 4. Splitting has a cooldown of 3 seconds after Cheese Summon.
+After Cheese Summon, these controls are restored, unless a cheese fragment is killed. In that case, that fragment’s controls are not recovered.
+	Little Cheese
+Cheese 1(left)
+Controlled by keys A and Z, can go left with A, right with Z
+Cheese Summon all cheeses to this cheese with number key 1, playing (SOUND)
+Cheese 2(up)
+If the Big Cheese had horizontal velocity, it keeps it post-split
+Controlled by key W, can jump(plays jump sound effect)
+Cheese Summon all cheeses to this cheese with number key 2, playing (SOUND)
+Cheese 3(right)
+Controlled by keys D and C, can go right with D, left with C
+Cheese Summon all cheeses to this cheese with number key 3, playing (SOUND)
+	All Cheeses
+Getting into contact with hazards kills the cheese. 
+Death animation - Once a cheese is killed, a mouse is summoned and devours the cheese.
+
+Level Layout
+Win condition: step onto a door labeled “exit.”
+Both one minicheese and an entire cheese count for winning the game.
+Platforms:
+Platforms can be stationary, but are also allowed to move around on a preset track.
+Mouse trap/ Mouth Trap:
+Touching lava instantly kills a piece of cheese, big or small.
+10 starting levels, add more with updates
+
+Example:
+
+
+
+
+To be added: Cosmetic unlocks(Achievements/in game currency/you know, monetizing)
+Cheese types (each with its own unique advantages/disadvantages):
+Mozzarella - tank an extra hit louder/really obnoxious and wet fart sound
+Parmesan- slightly higher jumps but at the cost of slightly less horizontal speed
+Goat cheese- stronger/more explosive cheese explosion
+Blue cheese 
+cheese^2(100%completion (cheese fractal))
+Camembert 
+
+Accessories
+pants
+Speedrun timer this is very important (unlock by drawing dream smiley face in  menu)
+Dream speedrun music and Dream cheese skin unlockable after a run < 30 seconds on final level
+https://www.youtube.com/watch?v=ciKWpXTtn9w
