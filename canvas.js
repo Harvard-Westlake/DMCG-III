@@ -1,5 +1,5 @@
-function connect() {
-  if (document.getElementById(50).addEventListener("click", function() && isAlive == true) {
-    summonCheese(50);
+function connect() extends BigCheese {
+  if (document.getElementById(50).addEventListener("click", function() && this.isAlive == true) {
+    this.summonCheese(50);
   }
 }
