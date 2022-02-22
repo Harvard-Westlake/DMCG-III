@@ -1,4 +1,4 @@
-class leftCheese extends BigCheese {
+class leftCheese extends splitCheese {
   function connectLeft() {
     if (document.getElementById(49).addEventListener("click", function()) && this.isAlive == true) {
       this.summonCheese(49);
