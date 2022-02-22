@@ -1,7 +1,7 @@
 class bigCheese {
   let splitArr [];
   let isAlive = true;
-  let jumpCooldown;
+  let jumpCooldown = 0.5;
   let canJump;
   let isSplit = false;
   let xPos;
@@ -32,5 +32,20 @@ class bigCheese {
       }
     checkForCollision();
     checkForLand();
+  }
+
+  function landOnPlatform() {
+    yVelo = 0;
+    while (xVelo < 0) {
+      xVelo++;
+    }
+    while (xVelo > 0) {
+      xVelo--;
+    }
+    isMoving = false;
+    while (jumpCooldown > 0) {
+      jumpCooldown = jumpCooldown - 0.1;
+    }
+    canJump = true;
   }
 }
