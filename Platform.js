@@ -1,42 +1,35 @@
 class Platform
 {
 
-constructor Platform (x,y,w,h, texture)
-{
-  this.xPos = x;
-  this.yPos = y;
-  this.width = w;
-  this.height = h;
-  if (platformTexture == texture) {
-    this.texture = texture;
-    this.evil = true;
-  }
-  else
+  constructor (x,y,w,h, isTrap)
   {
-    this.texture = platformTexture;
-    this.evil = false;
+    this.xPos = x;
+    this.yPos = y;
+    this.width = w;
+    this.height = h;
+    this.isTrap = isTrap;
+    }
+
   }
 
+  getX ()
+  {
+    return this.xPos;
+  }
 
-}
+  getY ()
+  {
+    return this.yPos;
+  }
 
-function getX ()
-{
-  return this.xPos;
-}
+  getWidth ()
+  {
+    return this.w;
+  }
 
-function getY ()
-{
-  return this.yPos;
-}
+  getHeight ()
+  {
+    return this.h;
+  }
 
-function getWidth ()
-{
-  return this.w;
-}
-
-function getHeight ()
-{
-  return this.h;
-}
 }
