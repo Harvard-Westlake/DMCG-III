@@ -39,13 +39,4 @@ function getHeight ()
 {
   return this.h;
 }
-function changePlatformPositionX (moveRate)
-{
-  this.xPos = this.xPos + moveRate;
-}
-
-function changePlatformPositionY (moveRate)
-{
-  this.yPos = this.yPos + moveRate;
-}
 }
