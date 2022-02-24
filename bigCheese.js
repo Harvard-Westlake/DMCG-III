@@ -16,7 +16,7 @@ class bigCheese {
   let gForce;
 
   function move(String direction) {
-    if (document.getElementById(87).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
+    while (document.getElementById(87).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
       yPos = yPos - 1;
       canJump = false;
       yVelo++;
@@ -28,13 +28,13 @@ class bigCheese {
       }
       clearInterval(t);
     }
-    if (document.getElementById(65).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
+    while (document.getElementById(65).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
       xVelo++;
       xVelo = xVelo - (xVelo * 2);
       let t = setInterval(addXVelo(), 1000);
       clearInterval(t);
     }
-      if (document.getElementById(68).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
+      while (document.getElementById(68).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
         xVelo++;
         xVelo = Math.abs(xVelo);
         let t = setInterval(addXVelo(), 1000);
