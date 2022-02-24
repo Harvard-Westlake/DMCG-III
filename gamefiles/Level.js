@@ -8,6 +8,8 @@ class Level {
 
   //draws every object stored in this Level onto the HTML canvas
   drawAllObjects(context) {
+    let image = new Image();
+    image.src = platformTexture;
     for (var i = 0; i < lev1.platforms.length; i++) {
       let xStart = lev1.platforms[i].getX();
     //  console.log("Called the platform X getter!");
@@ -19,7 +21,7 @@ class Level {
   //    console.log("Called the platform Height getter!");
       context.save();
       context.beginPath();
-      context.fillRect(xStart, yStart, xStart + xLength, yStart + yHeight);
+      context.drawImage(image,xStart, yStart, xStart + xLength, yStart + yHeight);
       context.restore();
       context.save();
     }
