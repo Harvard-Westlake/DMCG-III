@@ -1,34 +1,22 @@
-class BigCheese {
+class bigCheese {
   let splitArr = [];
   let isAlive = true;
   let jumpCooldown = 0.5;
-  let canJump;
+  let canJump = true;
   let isSplit = false;
-  let xPos;
-  let yPos;
-  let width;
-  let height;
-  let xVelo;
-  let yVelo;
+  let xPos = 0;
+  let yPos = 0;
+  let width = 10;
+  let height = 10;
+  let xVelo = 0;
+  let yVelo = 0;
   const gravity = 9.81;
-  const friction;
+  const friction = 5;
   let isMoving = false;
-  let gForce;
+  let gForce = 0;
 
-  //https://stackoverflow.com/questions/58618026/how-to-run-a-javascript-file-when-a-button-is-clicked-in-html
-  let startButton = document
-  .querySelector("#startGame")
-  .addEventListener("click", () => {
-    this.startGame();
-  });
-
-  // Function that start game
-  startGame = () => {
-    console.log("Game is starting");
-  };
-
-  function move(String direction) {
-    if (document.getElementById(87).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
+  move(String direction) {
+    while (document.getElementById(87).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
       yPos = yPos - 1;
       canJump = false;
       yVelo++;
@@ -38,14 +26,15 @@ class BigCheese {
       while (isMoving = false || checkForCollision().equals(false)) {
         let a = setInterval(gravitationalForce(), 1000);
       }
+      clearInterval(t);
     }
-    if (document.getElementById(65).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
+    while (document.getElementById(65).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
       xVelo++;
       xVelo = xVelo - (xVelo * 2);
       let t = setInterval(addXVelo(), 1000);
       clearInterval(t);
     }
-      if (document.getElementById(68).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
+      while (document.getElementById(68).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
         xVelo++;
         xVelo = Math.abs(xVelo);
         let t = setInterval(addXVelo(), 1000);
@@ -55,19 +44,19 @@ class BigCheese {
     checkForLand();
   }
 
-  function addYVelo() {
+  addYVelo() {
     yPos = yPos + yVelo;
   }
 
-  function gravitationalForce() {
+  gravitationalForce() {
     gForce = yVelo + gravity;
   }
 
-  function addXVelo() {
+  addXVelo() {
     xPos = xPos + xVelo;
   }
 
-  function landOnPlatform() {
+  landOnPlatform() {
     yVelo = 0;
     while (xVelo < 0) {
       xVelo++;
@@ -77,10 +66,16 @@ class BigCheese {
     }
     isMoving = false;
     while (jumpCooldown > 0) {
-      jumpCooldown = jumpCooldown - 0.1;
+      let j = setInterval(editJumpCooldown(), 1000);
     }
+    clearInterval(j);
     canJump = true;
   }
+
+  editJumpCooldown() {
+    jumpCooldown = jumpCooldown - 0.1;
+  }
+
   split() {
     if(jumpCooldown == true) return;
     isSplit = true;
@@ -97,7 +92,7 @@ class BigCheese {
 
 //https://stackoverflow.com/questions/26269433/check-javascript-condition-every-frame/26269529
   window.onload = function() {
-       function checkForCollision(platforms, traps, lava) {
+      checkForCollision(platforms, traps, lava) {
          while(isMoving){
            for(int i = 0; i < platforms.length; i++){
              if(xPos == platforms[i].getXPos() && yPos == platforms[i].getYPos()){
@@ -123,7 +118,7 @@ class BigCheese {
    }
   }
   window.onload = function() {
-       function checkForLand(platforms, traps, lava) {
+      checkForLand(platforms, traps, lava) {
          while(isMoving){
            for(int i = 0; i < platforms.length; i++){
              if(platforms[i].inLandingRange(xPos, yPos)){
