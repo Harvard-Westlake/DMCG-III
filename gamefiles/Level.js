@@ -8,7 +8,7 @@ class Level {
 
   //draws every object stored in this Level onto the HTML canvas
   drawAllObjects(context) {
-    for (var i = 0; i < 1; i++) {
+    for (var i = 0; i < lev1.platforms.length; i++) {
       let xStart = lev1.platforms[i].getX();
       console.log("Called the platform X getter!");
       let yStart = lev1.platforms[i].getY();
