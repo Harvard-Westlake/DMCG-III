@@ -1,19 +1,19 @@
 class BigCheese {
-//  let splitArr: [],
-  let isAlive : true,
-  let jumpCooldown : 0.5,
-  let canJump : true,
-  let isSplit : false,
-  let xPos: 0,
-  let yPos : 0,
-  let width : 10,
-  let height : 10,
-  let xVelo : 0,
-  let yVelo : 0,
-  const gravity : 9.81,
-  const friction : 5,
-  let isMoving : false,
-  let gForce : 0,
+  let splitArr = [];
+  let isAlive = true;
+  let jumpCooldown = 0.5;
+  let canJump;
+  let isSplit = false;
+  let xPos;
+  let yPos;
+  let width;
+  let height;
+  let xVelo;
+  let yVelo;
+  const gravity = 9.81;
+  const friction;
+  let isMoving = false;
+  let gForce;
 
   //https://stackoverflow.com/questions/58618026/how-to-run-a-javascript-file-when-a-button-is-clicked-in-html
   let startButton = document
