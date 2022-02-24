@@ -1,4 +1,4 @@
-class bigCheese {
+class BigCheese {
   let splitArr = [];
   let isAlive = true;
   let jumpCooldown = 0.5;
