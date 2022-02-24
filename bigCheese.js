@@ -26,6 +26,7 @@ class bigCheese {
       while (isMoving = false || checkForCollision().equals(false)) {
         let a = setInterval(gravitationalForce(), 1000);
       }
+      clearInterval(t);
     }
     if (document.getElementById(65).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
       xVelo++;
