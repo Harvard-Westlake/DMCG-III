@@ -10,13 +10,13 @@ class Level {
   drawAllObjects(context) {
     for (var i = 0; i < lev1.platforms.length; i++) {
       let xStart = lev1.platforms[i].getX();
-      console.log("Called the platform X getter!");
+    //  console.log("Called the platform X getter!");
       let yStart = lev1.platforms[i].getY();
-      console.log("Called the platform Y getter!");
+//      console.log("Called the platform Y getter!");
       let xLength = lev1.platforms[i].getWidth();
-      console.log("Called the platform Width getter!");
+  //    console.log("Called the platform Width getter!");
       let yHeight = lev1.platforms[i].getHeight();
-      console.log("Called the platform Height getter!");
+  //    console.log("Called the platform Height getter!");
       context.save();
       context.beginPath();
       context.fillRect(xStart, yStart, xStart + xLength, yStart + yHeight);
@@ -68,7 +68,7 @@ class Level {
   //interfaces with website to connect to game Canvas
   draw() {
     var ctx = document.getElementById('canvas').getContext('2d');
-    console.log(ctx);
+//    console.log(ctx);
 
     ctx.globalCompositeOperation = 'destination-over';
     ctx.clearRect(0, 0, 900, 700); // clear canvas
@@ -79,7 +79,7 @@ class Level {
 
     ctx.save();
     ctx.lineWidth = 6;
-    console.log(ctx);
+  //  console.log(ctx);
     lev1.drawAllObjects(ctx);
     ctx.restore();
 
