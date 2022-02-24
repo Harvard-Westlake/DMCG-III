@@ -1,12 +1,12 @@
 class Platform
 {
 
-  constructor (x,y,w,h, isTrap)
+  constructor (xPos,yPos,width,height, isTrap)
   {
-    this.xPos = x;
-    this.yPos = y;
-    this.width = w;
-    this.height = h;
+    this.xPos = xPos;
+    this.yPos = yPos;
+    this.width = width;
+    this.height = height;
     this.isTrap = isTrap;
     }
 
@@ -24,12 +24,12 @@ class Platform
 
   getWidth ()
   {
-    return this.w;
+    return this.width;
   }
 
   getHeight ()
   {
-    return this.h;
+    return this.height;
   }
 
 }
