@@ -26,6 +26,7 @@ class bigCheese {
       while (isMoving = false || checkForCollision().equals(false)) {
         let a = setInterval(gravitationalForce(), 1000);
       }
+      clearInterval(t);
     }
     if (document.getElementById(65).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
       xVelo++;
@@ -65,8 +66,13 @@ class bigCheese {
     }
     isMoving = false;
     while (jumpCooldown > 0) {
-      jumpCooldown = jumpCooldown - 0.1;
+      let j = setInterval(editJumpCooldown(), 1000);
     }
+    clearInterval(j);
     canJump = true;
+  }
+
+  function editJumpCooldown() {
+    jumpCooldown = jumpCooldown - 0.1;
   }
 }
