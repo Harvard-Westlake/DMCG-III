@@ -1,21 +1,21 @@
 class bigCheese {
-  let splitArr: [],
-  let isAlive : true,
-  let jumpCooldown : 0.5,
-  let canJump : true,
-  let isSplit : false,
-  let xPos: 0,
-  let yPos : 0,
-  let width : 10,
-  let height : 10,
-  let xVelo : 0,
-  let yVelo : 0,
-  const gravity : 9.81,
-  const friction : 5,
-  let isMoving : false,
-  let gForce : 0,
+  let splitArr = [];
+  let isAlive = true;
+  let jumpCooldown = 0.5;
+  let canJump = true;
+  let isSplit = false;
+  let xPos = 0;
+  let yPos = 0;
+  let width = 10;
+  let height = 10;
+  let xVelo = 0;
+  let yVelo = 0;
+  const gravity = 9.81;
+  const friction = 5;
+  let isMoving = false;
+  let gForce = 0;
 
-  function move(String direction) {
+  move(String direction) {
     while (document.getElementById(87).addEventListener("click", function()) && this.isAlive == true && this.isMoving = true) {
       yPos = yPos - 1;
       canJump = false;
@@ -44,19 +44,19 @@ class bigCheese {
     checkForLand();
   }
 
-  function addYVelo() {
+  addYVelo() {
     yPos = yPos + yVelo;
   }
 
-  function gravitationalForce() {
+  gravitationalForce() {
     gForce = yVelo + gravity;
   }
 
-  function addXVelo() {
+  addXVelo() {
     xPos = xPos + xVelo;
   }
 
-  function landOnPlatform() {
+  landOnPlatform() {
     yVelo = 0;
     while (xVelo < 0) {
       xVelo++;
@@ -72,7 +72,7 @@ class bigCheese {
     canJump = true;
   }
 
-  function editJumpCooldown() {
+  editJumpCooldown() {
     jumpCooldown = jumpCooldown - 0.1;
   }
 }
