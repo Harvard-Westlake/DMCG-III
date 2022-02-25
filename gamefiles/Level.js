@@ -26,6 +26,8 @@ class Level {
       context.save();
     }
     /*
+    let image = new Image();
+    image.src = trapTexture;
     for (var i = 0; i < lev1.traps.length; i++) {
       let xStart = traps[i].getX();
       console.log("Called the trap X getter!");
@@ -37,13 +39,15 @@ class Level {
       console.log("Called the trap Height getter!");
       ctx.save();
       ctx.beginPath();
-      ctx.fillStyle = "#F00000";
-      ctx.fillRect(xStart, yStart, xStart + xLength, yStart + yHeight);
+
+      context.drawImage(image,xStart, yStart, xStart + xLength, yStart + yHeight);
       ctx.restore();
       ctx.save();
     }
 
     for (var i = 0; i < lev1.cheeses.length; i++) {
+    let image = new Image();
+    image.src = cheeseTexture;
       let xStart = cheeses[i].getX();
       console.log("Called the cheese X getter!");
       let yStart = cheeses[i].getY();
@@ -54,8 +58,7 @@ class Level {
       console.log("Called the cheese Height getter!");
       ctx.save();
       ctx.beginPath();
-      ctx.fillStyle = "#FF0000";
-      ctx.fillRect(xStart, yStart, xStart + xLength, yStart + yHeight);
+      context.drawImage(image,xStart, yStart, xStart + xLength, yStart + yHeight);
       ctx.restore();
       ctx.save();
     }
