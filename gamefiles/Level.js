@@ -25,44 +25,44 @@ class Level {
       context.restore();
       context.save();
     }
-    /*
-    let image = new Image();
-    image.src = trapTexture;
+
+    let image1 = new Image();
+    image1.src = trapTexture;
     for (var i = 0; i < lev1.traps.length; i++) {
       let xStart = traps[i].getX();
-      console.log("Called the trap X getter!");
+  //    console.log("Called the trap X getter!");
       let yStart = traps[i].getY();
-      console.log("Called the trap Y getter!");
+    //  console.log("Called the trap Y getter!");
       let xLength = traps[i].getWidth();
-      console.log("Called the trap Width getter!");
+    //  console.log("Called the trap Width getter!");
       let yHeight = traps[i].getHeight();
-      console.log("Called the trap Height getter!");
+    //  console.log("Called the trap Height getter!");
       ctx.save();
       ctx.beginPath();
 
-      context.drawImage(image,xStart, yStart, xStart + xLength, yStart + yHeight);
+      context.drawImage(image1,xStart, yStart, xStart + xLength, yStart + yHeight);
       ctx.restore();
       ctx.save();
     }
 
     for (var i = 0; i < lev1.cheeses.length; i++) {
-    let image = new Image();
-    image.src = cheeseTexture;
+    let image2 = new Image();
+    image2.src = cheeseTexture;
       let xStart = cheeses[i].getX();
-      console.log("Called the cheese X getter!");
+      //console.log("Called the cheese X getter!");
       let yStart = cheeses[i].getY();
-      console.log("Called the cheese Y getter!");
+    //  console.log("Called the cheese Y getter!");
       let xLength = cheeses[i].getWidth();
-      console.log("Called the cheese Width getter!");
+      //console.log("Called the cheese Width getter!");
       let yHeight = cheeses[i].getHeight();
-      console.log("Called the cheese Height getter!");
+  //    console.log("Called the cheese Height getter!");
       ctx.save();
       ctx.beginPath();
-      context.drawImage(image,xStart, yStart, xStart + xLength, yStart + yHeight);
+      context.drawImage(image2,xStart, yStart, xStart + xLength, yStart + yHeight);
       ctx.restore();
       ctx.save();
     }
-    */
+
   }
 
   //interfaces with user machine to refresh as fast as possible
