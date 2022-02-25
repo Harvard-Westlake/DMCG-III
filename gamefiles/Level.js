@@ -29,22 +29,22 @@ class Level {
     let image1 = new Image();
     image1.src = trapTexture;
     for (var i = 0; i < lev1.traps.length; i++) {
-      let xStart = traps[i].getX();
+      let xStart = this.traps[i].getX();
   //    console.log("Called the trap X getter!");
-      let yStart = traps[i].getY();
+      let yStart = this.traps[i].getY();
     //  console.log("Called the trap Y getter!");
-      let xLength = traps[i].getWidth();
+      let xLength = this.traps[i].getWidth();
     //  console.log("Called the trap Width getter!");
-      let yHeight = traps[i].getHeight();
+      let yHeight = this.traps[i].getHeight();
     //  console.log("Called the trap Height getter!");
-      ctx.save();
-      ctx.beginPath();
+      context.save();
+      context.beginPath();
 
       context.drawImage(image1,xStart, yStart, xStart + xLength, yStart + yHeight);
-      ctx.restore();
-      ctx.save();
-    }
+      context.restore();
 
+    }
+/*
     for (var i = 0; i < lev1.cheeses.length; i++) {
     let image2 = new Image();
     image2.src = cheeseTexture;
@@ -56,13 +56,13 @@ class Level {
       //console.log("Called the cheese Width getter!");
       let yHeight = cheeses[i].getHeight();
   //    console.log("Called the cheese Height getter!");
-      ctx.save();
-      ctx.beginPath();
+      context.save();
+      context.beginPath();
       context.drawImage(image2,xStart, yStart, xStart + xLength, yStart + yHeight);
-      ctx.restore();
-      ctx.save();
+      context.restore();
+      context.save();
     }
-
+*/
   }
 
   //interfaces with user machine to refresh as fast as possible
@@ -72,21 +72,21 @@ class Level {
 
   //interfaces with website to connect to game Canvas
   draw() {
-    var ctx = document.getElementById('canvas').getContext('2d');
-//    console.log(ctx);
+    var context = document.getElementById('canvas').getContext('2d');
+//    console.log(context);
 
-    ctx.globalCompositeOperation = 'destination-over';
-    ctx.clearRect(0, 0, 900, 700); // clear canvas
+    context.globalCompositeOperation = 'destination-over';
+    context.clearRect(0, 0, 900, 700); // clear canvas
 
     // Figure out what pen we wanna draw with
-    ctx.fillStyle = 'rgba(0, 153, 255, 1)';
-    ctx.strokeStyle = 'rgba(0, 153, 255, 0.4)';
+    context.fillStyle = 'rgba(0, 153, 255, 1)';
+    context.strokeStyle = 'rgba(0, 153, 255, 0.4)';
 
-    ctx.save();
-    ctx.lineWidth = 6;
-  //  console.log(ctx);
-    lev1.drawAllObjects(ctx);
-    ctx.restore();
+    context.save();
+    context.lineWidth = 6;
+  //  console.log(context);
+    lev1.drawAllObjects(context);
+    context.restore();
 
 
     // Call draw when the website is ready
