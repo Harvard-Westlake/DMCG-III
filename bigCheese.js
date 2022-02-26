@@ -42,6 +42,10 @@ class bigCheese {
     this.yVelo = number;
   }
 
+  move(){
+    console.log('moved');
+  }
+
   move(direction) {
       if(this.isAlive == true){
         switch(direction){
@@ -51,41 +55,45 @@ class bigCheese {
             this.canJump = false;
             this.yPos = this.yVelo * this.currentAirTime - (0.5 * this.gravity * this.currentAirTime * this.currentAirTime);
             this.yVelo = this.yVelo + (this.gravity * this.currentAirTime);
-            Level.checkForCollision();
-            Level.checkForLand();
-            window.requestAnimationFrame(move(87));
+            //Level.checkForCollision();
+            //Level.checkForLand();
+            //window.requestAnimationFrame(buffer(87));
             break;
           case 65:
             this.xPos = this.xPos + this.xVelo;
-            window.requestAnimationFrame(move(65));
             break;
           case 68:
             this.xPos = this.xPos + this.xVelo;
-            window.requestAnimationFrame(move(68));
             break;
         }
-        Level.checkForCollision();
-        Level.checkForLand();
+        //Level.checkForCollision();
+        //Level.checkForLand();
       }
   }
-    document.addEventListener('keydown', function(e){//W = 87
-      if(e.key == 'w'){
-        this.startJumpTime = performance.now();
-        this.yVelo = 10; //dummy value
-        move(87);
-        this.yVelo = 0;
-      }
-      if(e.key == 'a'){
-        this.xVelo = -5;
-        move(65);
-        this.xVelo = 0;
-      }
-      if(e.key == 'd'){
-        this.xVelo = 5;
-        move(68);
-        this.xVelo = 0;
-      }
-    })
+
+  initializeKeyListeners(){
+    window.addEventListener("keydown", function(e) { //W = 87
+      if(e.key == "w"){//87
+        console.log('w');
+        // this.startJumpTime = performance.now();
+        // this.yVelo = 10; //dummy value
+        // move(87);
+        // this.yVelo = 0;
+      };
+      if(e.key == "a"){//65
+        console.log('a');
+        // this.xVelo = -5;
+        // move(65);
+        // this.xVelo = 0;
+      };
+      if(e.key == "d"){//68
+        console.log('d');
+      // this.xVelo = 5;
+      // move(68);
+      // this.xVelo = 0;
+      };
+    });
+  }
     // if (document.getElementById(87).addEventListener("click", function()) && this.isAlive == true && this.isMoving == true) {
     //   yPos = yPos - 1;
     //   canJump = false;
