@@ -57,7 +57,6 @@ class bigCheese {
             this.yVelo = this.yVelo + (this.gravity * this.currentAirTime);
             //Level.checkForCollision();
             //Level.checkForLand();
-            //window.requestAnimationFrame(buffer(87));
             break;
           case 65:
             this.xPos = this.xPos + this.xVelo;
@@ -72,25 +71,26 @@ class bigCheese {
   }
 
   initializeKeyListeners(){
+    let self = this;
     window.addEventListener("keydown", function(e) { //W = 87
       if(e.key == "w"){//87
         console.log('w');
-        // this.startJumpTime = performance.now();
-        // this.yVelo = 10; //dummy value
-        // move(87);
-        // this.yVelo = 0;
+        self.startJumpTime = performance.now();
+        self.yVelo = 10; //dummy value
+        self.move(87);
+        self.yVelo = 0;
       };
       if(e.key == "a"){//65
         console.log('a');
-        // this.xVelo = -5;
-        // move(65);
-        // this.xVelo = 0;
+        self.xVelo = -5;
+        self.move(65);
+        self.xVelo = 0;
       };
       if(e.key == "d"){//68
         console.log('d');
-      // this.xVelo = 5;
-      // move(68);
-      // this.xVelo = 0;
+      self.xVelo = 5;
+      self.move(68);
+      self.xVelo = 0;
       };
     });
   }
