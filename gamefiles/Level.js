@@ -48,7 +48,7 @@ class Level {
       context.save();
       context.beginPath();
 
-      context.drawImage(trapImage, xStart, yStart, xStart + xLength, yStart + yHeight);
+      context.drawImage(this.trapImage, xStart, yStart, xStart + xLength, yStart + yHeight);
       context.restore();
 
     }
