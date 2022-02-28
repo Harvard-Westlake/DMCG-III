@@ -30,7 +30,7 @@ class Level {
       //    console.log("Called the platform Height getter!");
       context.save();
       context.beginPath();
-      context.drawImage(this.platformImage, xStart, yStart, xStart + xLength, yStart + yHeight);
+      context.drawImage(this.platformImage, xStart, yStart, xLength,yHeight);
       context.restore();
 
     }
@@ -48,7 +48,7 @@ class Level {
       context.save();
       context.beginPath();
 
-      context.drawImage(trapImage, xStart, yStart, xStart + xLength, yStart + yHeight);
+      context.drawImage(this.trapImage, xStart, yStart, xLength,yHeight);
       context.restore();
 
     }
@@ -56,17 +56,17 @@ class Level {
         for (var i = 0; i < this.cheeses.length; i++) {
         let platformImage2 = new Image();
         platformImage2.src = cheeseTexture;
-          let xStart = cheeses[i].getX();
+          let xStart = this.cheeses[i].getX();
           //console.log("Called the cheese X getter!");
-          let yStart = cheeses[i].getY();
+          let yStart = this.cheeses[i].getY();
         //  console.log("Called the cheese Y getter!");
-          let xLength = cheeses[i].getWidth();
+          let xLength = this.cheeses[i].getWidth();
           //console.log("Called the cheese Width getter!");
-          let yHeight = cheeses[i].getHeight();
+          let yHeight = this.cheeses[i].getHeight();
       //    console.log("Called the cheese Height getter!");
           context.save();
           context.beginPath();
-          context.drawImage(platformImage2,xStart, yStart, xStart + xLength, yStart + yHeight);
+          context.drawImage(this.cheeseImage,xStart, yStart, xLength, yHeight);
           context.restore();
           context.save();
         }
