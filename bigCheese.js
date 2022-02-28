@@ -42,21 +42,11 @@ class bigCheese {
     this.yVelo = number;
   }
 
-  move(){
-    console.log('moved');
-  }
-
   move(direction) {
       if(this.isAlive == true){
         switch(direction){
           case 87:
-            this.currentAirTime = performance.now() - this.startJumpTime;
-            this.isMoving = true;
-            this.canJump = false;
-            this.yPos = this.yVelo * this.currentAirTime - (0.5 * this.gravity * this.currentAirTime * this.currentAirTime);
-            this.yVelo = this.yVelo + (this.gravity * this.currentAirTime);
-            //Level.checkForCollision();
-            //Level.checkForLand();
+            this.jump();
             break;
           case 65:
             this.xPos = this.xPos + this.xVelo;
@@ -70,6 +60,21 @@ class bigCheese {
       }
   }
 
+  jump(){
+    console.log("jumping");
+    this.setYVelo(20);
+    console.log(this.yVelo);
+    this.isJumping = true;
+  }
+
+  updateYPos() {
+    this.currentAirTime = performance.now() - this.startJumpTime;
+    this.isMoving = true;
+    this.canJump = false;
+    this.yPos = this.yVelo * this.currentAirTime - (0.5 * this.gravity * this.currentAirTime * this.currentAirTime);
+    this.yVelo = this.yVelo + (this.gravity * this.currentAirTime);
+  }
+
   initializeKeyListeners(){
     let self = this;
     window.addEventListener("keydown", function(e) { //W = 87
@@ -78,7 +83,6 @@ class bigCheese {
         self.startJumpTime = performance.now();
         self.yVelo = 10; //dummy value
         self.move(87);
-        self.yVelo = 0;
       };
       if(e.key == "a"){//65
         console.log('a');
