@@ -4,11 +4,22 @@
 
   <head>
     <!-- please link your code in this area; do not link elsewhere --->
-    <script src = "bigCheese.js"> </script>
+
+    <script type = "text/javascript" src="Level.js"> </script>
+    <script src="Platform.js"> </script>
+    <script src = "Trap.js"> </script>
+    <script>
+    var plat1 = [ new Platform(100,100,50,50, false),new Platform(300,100,25,40, false)];
+    var ches1 = null;
+    var trap1 = [ new Trap(100,100,50,50, false)];
+    var lev1 = new Level (plat1, trap1, ches1);
+    lev1.initializeAnimation();
+    </script>
+  
     <!-- please link the website stylesheet in this tag; do not link elsewhere --->
     <link>
   </head>
-
+<script src = "FileHandler.js"></script>
   <body>
 
     <h1> WELCOME TO DEATH METAL CHEESE GRATER THREE </h1>
@@ -16,7 +27,7 @@
 
     <h6> not to be mistaken with death metal cheese grater two </h6>
     <!-- this is where the game will be animated onto; start button included in this skeleton --->
-    <canvas width = "300" height = "500"> </canvas>
+    <canvas id="canvas" width="900" height="500" class = one></canvas>
     <p> test <br /> please connect your code to this le canvas drawing shit needs to be basically handled </p>
     <input type="button" id="startGame" value="PLAY BUTTON" />
 
