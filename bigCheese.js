@@ -61,18 +61,16 @@ class bigCheese {
   }
 
   jump(){
-    console.log("jumping");
-    this.setYVelo(20);
-    console.log(this.yVelo);
     this.isJumping = true;
-  }
-
-  updateYPos() {
     this.currentAirTime = performance.now() - this.startJumpTime;
     this.isMoving = true;
     this.canJump = false;
     this.yPos = this.yVelo * this.currentAirTime - (0.5 * this.gravity * this.currentAirTime * this.currentAirTime);
     this.yVelo = this.yVelo + (this.gravity * this.currentAirTime);
+  }
+
+  updateYPos() {
+
   }
 
   initializeKeyListeners(){
