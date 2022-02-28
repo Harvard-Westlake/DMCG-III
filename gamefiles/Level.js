@@ -10,6 +10,10 @@ class Level {
 
     this.platformImage = new Image();
     this.platformImage.src = platformTexture;
+    this.trapImage = new Image();
+    this.trapImage.src = trapTexture;
+    this.cheeseImage = new Image();
+    this.cheeseImage.src = cheeseTexture;
   }
 
   //draws every object stored in this Level onto the HTML canvas
@@ -31,8 +35,7 @@ class Level {
 
     }
 
-    let trapImage = new Image();
-    trapImage.src = trapTexture;
+
     for (var i = 0; i < this.traps.length; i++) {
       let xStart = this.traps[i].getX();
       //    console.log("Called the trap X getter!");
