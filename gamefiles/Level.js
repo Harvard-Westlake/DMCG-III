@@ -10,20 +10,21 @@ class Level {
   drawAllObjects(context) {
     let background = new Image();
     background.src = backgroundTexture;
+
     let image = new Image();
     image.src = platformTexture;
     for (var i = 0; i < lev1.platforms.length; i++) {
       let xStart = lev1.platforms[i].getX();
-    //  console.log("Called the platform X getter!");
+      //  console.log("Called the platform X getter!");
       let yStart = lev1.platforms[i].getY();
-//      console.log("Called the platform Y getter!");
+      //      console.log("Called the platform Y getter!");
       let xLength = lev1.platforms[i].getWidth();
-  //    console.log("Called the platform Width getter!");
+      //    console.log("Called the platform Width getter!");
       let yHeight = lev1.platforms[i].getHeight();
-  //    console.log("Called the platform Height getter!");
+      //    console.log("Called the platform Height getter!");
       context.save();
       context.beginPath();
-      context.drawImage(image,xStart, yStart, xStart + xLength, yStart + yHeight);
+      context.drawImage(image, xStart, yStart, xStart + xLength, yStart + yHeight);
       context.restore();
       context.save();
     }
@@ -32,39 +33,43 @@ class Level {
     image1.src = trapTexture;
     for (var i = 0; i < lev1.traps.length; i++) {
       let xStart = this.traps[i].getX();
-  //    console.log("Called the trap X getter!");
+      //    console.log("Called the trap X getter!");
       let yStart = this.traps[i].getY();
-    //  console.log("Called the trap Y getter!");
+      //  console.log("Called the trap Y getter!");
       let xLength = this.traps[i].getWidth();
-    //  console.log("Called the trap Width getter!");
+      //  console.log("Called the trap Width getter!");
       let yHeight = this.traps[i].getHeight();
-    //  console.log("Called the trap Height getter!");
+      //  console.log("Called the trap Height getter!");
       context.save();
       context.beginPath();
 
-      context.drawImage(image1,xStart, yStart, xStart + xLength, yStart + yHeight);
+      context.drawImage(image1, xStart, yStart, xStart + xLength, yStart + yHeight);
       context.restore();
 
     }
-/*
-    for (var i = 0; i < lev1.cheeses.length; i++) {
-    let image2 = new Image();
-    image2.src = cheeseTexture;
-      let xStart = cheeses[i].getX();
-      //console.log("Called the cheese X getter!");
-      let yStart = cheeses[i].getY();
-    //  console.log("Called the cheese Y getter!");
-      let xLength = cheeses[i].getWidth();
-      //console.log("Called the cheese Width getter!");
-      let yHeight = cheeses[i].getHeight();
-  //    console.log("Called the cheese Height getter!");
-      context.save();
-      context.beginPath();
-      context.drawImage(image2,xStart, yStart, xStart + xLength, yStart + yHeight);
-      context.restore();
-      context.save();
-    }
-*/
+    /*
+        for (var i = 0; i < lev1.cheeses.length; i++) {
+        let image2 = new Image();
+        image2.src = cheeseTexture;
+          let xStart = cheeses[i].getX();
+          //console.log("Called the cheese X getter!");
+          let yStart = cheeses[i].getY();
+        //  console.log("Called the cheese Y getter!");
+          let xLength = cheeses[i].getWidth();
+          //console.log("Called the cheese Width getter!");
+          let yHeight = cheeses[i].getHeight();
+      //    console.log("Called the cheese Height getter!");
+          context.save();
+          context.beginPath();
+          context.drawImage(image2,xStart, yStart, xStart + xLength, yStart + yHeight);
+          context.restore();
+          context.save();
+        }
+    */
+    context.save();
+    context.beginPath();
+    context.drawImage(background, 0, 0, context.canvas.clientWidth, context.canvas.clientHeight);
+    context.restore();
   }
 
   //interfaces with user machine to refresh as fast as possible
@@ -75,7 +80,7 @@ class Level {
   //interfaces with website to connect to game Canvas
   draw() {
     var context = document.getElementById('canvas').getContext('2d');
-//    console.log(context);
+    //    console.log(context);
 
     context.globalCompositeOperation = 'destination-over';
     context.clearRect(0, 0, 900, 700); // clear canvas
@@ -86,7 +91,7 @@ class Level {
 
     context.save();
     context.lineWidth = 6;
-  //  console.log(context);
+    //  console.log(context);
     lev1.drawAllObjects(context);
     context.restore();
 
