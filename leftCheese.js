@@ -11,6 +11,8 @@ class leftCheese  {
   this.yVelo = 0;
   this.friction = 5;
   this.isMoving = false;
+  this.gravity = 9.81;
+  this.gForce = 0;
 }
 
 move(){
