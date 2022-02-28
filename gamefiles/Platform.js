@@ -11,26 +11,26 @@ class Platform
     }
 
 
-  get getX ()
+  getX ()
   {
     return this.xPos;
   }
 
-  get getY ()
+  getY ()
   {
     return this.yPos;
   }
 
-  get getWidth ()
+  getWidth ()
   {
     return this.width;
   }
 
-  get getHeight ()
+  getHeight ()
   {
     return this.height;
   }
-  get getIsTrap ()
+  getIsTrap ()
   {
     return this.isTrap;
   }
