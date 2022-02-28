@@ -1,19 +1,54 @@
-class leftCheese extends splitCheese {
-  function connectLeft() {
-    if (document.getElementById(49).addEventListener("click", function()) && this.isAlive == true) {
-      this.summonCheese(49);
-    }
-  }
+class leftCheese  {
+  constructor() {
+  this.isAlive = true;
+  this.canJump = false;
+  this.isSplit = true;
+  this.xPos = 0;
+  this.yPos = 0;
+  this.width = 10;
+  this.height = 10;
+  this.xVelo = 0;
+  this.yVelo = 0;
+  this.friction = 5;
+  this.isMoving = false;
+}
 
-  function moveLeft() {
-    if (document.getElementById(65).addEventListener("click", function()) && this.isAlive == true) {
-      Move("left");
-    }
-  }
+move(){
+  console.log('moved');
+}
 
-  function moveRight() {
-    if (document.getElementById(68).addEventListener("click", function()) && this.isAlive == true) {
-      Move("right");
+  move(direction) {
+    if(this.isAlive == true){
+      switch(direction){
+        case 65:
+          this.xPos = this.xPos + this.xVelo;
+          break;
+        case 68:
+          this.xPos = this.xPos + this.xVelo;
+          break;
+      }
     }
+}
+
+initializeKeyListeners(){
+    let self = this;
+    window.addEventListener("keydown", function(e) { //W = 87
+      if(e.key == "a"){//65
+  console.log('a');
+  self.xVelo = -5;
+  self.move(65);
+  self.xVelo = 0;
+};
+if(e.key == "d"){//68
+      console.log('d');
+    self.xVelo = 5;
+    self.move(68);
+    self.xVelo = 0;
+    };
+  });
+}
+
+die(){
+    isAlive = false;
   }
 }
