@@ -30,7 +30,7 @@ class Level {
       //    console.log("Called the platform Height getter!");
       context.save();
       context.beginPath();
-      context.drawImage(this.platformImage, xStart, yStart, xStart + xLength, yStart + yHeight);
+      context.drawImage(this.platformImage, xStart, yStart, xLength,yHeight);
       context.restore();
 
     }
@@ -48,7 +48,7 @@ class Level {
       context.save();
       context.beginPath();
 
-      context.drawImage(this.trapImage, xStart, yStart, xStart + xLength, yStart + yHeight);
+      context.drawImage(this.trapImage, xStart, yStart, xLength,yHeight);
       context.restore();
 
     }
