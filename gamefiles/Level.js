@@ -8,6 +8,8 @@ class Level {
 
   //draws every object stored in this Level onto the HTML canvas
   drawAllObjects(context) {
+    let background = new Image();
+    background.src = backgroundTexture;
     let image = new Image();
     image.src = platformTexture;
     for (var i = 0; i < lev1.platforms.length; i++) {
