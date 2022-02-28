@@ -32,7 +32,7 @@ move(){
 
 initializeKeyListeners(){
     let self = this;
-    window.addEventListener("keydown", function(e) { //W = 87
+    window.addEventListener("keydown", function(e) {
       if(e.key == "a"){//65
   console.log('a');
   self.xVelo = -5;
