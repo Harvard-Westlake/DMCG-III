@@ -14,7 +14,12 @@ class leftCheese  {
     this.gravity = 9.81;
     this.gForce = 0;
   }
-
+  getX(){
+    return xPos;
+  }
+  getY(){
+    return yPos;
+  }
   move(){
     console.log('moved');
   }
