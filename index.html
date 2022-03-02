@@ -17,14 +17,14 @@
     </body>
     <script src = "./gamefiles/FileHandler.js"></script>
     <!-- please link your code in this area; do not link elsewhere --->
-
+<script src="./gamefiles/bigCheese.js"> </script>
     <script src="./gamefiles/Level.js"> </script>
     <script src="./gamefiles/Platform.js"> </script>
     <script src = "./gamefiles/Trap.js"> </script>
     <script src = "./gamefiles/leftCheese.js"> </script>
     <script>
     var plat1 = [ new Platform(100,100,0,0, false),new Platform(300,100,25,40, false)];
-    var ches1 = [new leftCheese()];
+    var ches1 = [new leftCheese(), new bigCheese()];
     var trap1 = [ new Trap(100,100,50,50, false)];
     var lev1 = new Level (plat1, trap1, ches1);
 

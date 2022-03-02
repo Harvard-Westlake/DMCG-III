@@ -7,8 +7,8 @@ class bigCheese {
     this.isSplit = false;
     this.xPos = 0;
     this.yPos = 0;
-    this.width = 10;
-    this.height = 10;
+    this.width = 50;
+    this.height = 50;
     this.xVelo = 0;
     this.yVelo = 0;
     this.gravity = 9.81;
