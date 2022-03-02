@@ -16,11 +16,16 @@ class bigCheese {
     this.isMoving = false;
     this.gForce = 0;
   }
-
-  getXPos(){
+  getWidth(){
+    return this.width;
+  }
+  getHeight(){
+    return this.height;
+  }
+  getX(){
     return this.xPos;
   }
-  getYPos(){
+  getY(){
     return this.yPos;
   }
   getXVelo(){
@@ -158,7 +163,7 @@ class bigCheese {
     if(jumpCooldown == true) return;
     isSplit = true;
     //https://stackoverflow.com/questions/9419263/how-to-play-audio
-    var audio = new Audio('Sometimes i dream about cheese Sound Effect (Clean).mp3');//which audio file is it supposed to be?
+    var audio = new Audio(dreamaboutcheese);//which audio file is it supposed to be?
     audio.play();
     const left = new LeftCheese();//need velo inputs?
     const middle = new MiddleCheese();
