@@ -52,7 +52,7 @@ class Level {
       context.restore();
 
     }
-    /*
+
         for (var i = 0; i < this.cheeses.length; i++) {
         let platformImage2 = new Image();
         platformImage2.src = cheeseTexture;
@@ -70,7 +70,7 @@ class Level {
           context.restore();
           context.save();
         }
-    */
+    
     context.save();
     context.beginPath();
     context.drawImage(this.background, 0, 0, context.canvas.clientWidth, context.canvas.clientHeight);
