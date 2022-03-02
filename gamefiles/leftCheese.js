@@ -16,10 +16,16 @@ class leftCheese  {
     this.initializeKeyListeners();
   }
   getX(){
-    return xPos;
+    return this.xPos;
   }
   getY(){
-    return yPos;
+    return this.yPos;
+  }
+  getWidth(){
+    return this.width;
+  }
+  getHeight(){
+    return this.height;
   }
   move(){
     console.log('moved');
