@@ -70,7 +70,7 @@ class Level {
           context.restore();
           context.save();
         }
-    
+
     context.save();
     context.beginPath();
     context.drawImage(this.background, 0, 0, context.canvas.clientWidth, context.canvas.clientHeight);
@@ -84,6 +84,10 @@ class Level {
 
   //interfaces with website to connect to game Canvas
   draw() {
+    //refresh ur ass
+    for(var c=0;c<this.cheeses.length;c++){
+      this.cheeses[c].refresh();
+    }
     let context = document.getElementById('canvas').getContext('2d');
     //    console.log(context);
 
@@ -99,6 +103,7 @@ class Level {
     //  console.log(context);
     this.drawAllObjects(context);
     context.restore();
+
 
 
     // Call draw when the website is ready

@@ -6,15 +6,36 @@ class bigCheese {
     this.canJump = true;
     this.isSplit = false;
     this.xPos = 0;
-    this.yPos = 0;
+    this.yPos = 200;
     this.width = 50;
     this.height = 50;
+    this.xAccel = 0;
     this.xVelo = 0;
     this.yVelo = 0;
-    this.gravity = 9.81;
+    this.gravity = 0.09;
     this.friction = 5;
     this.isMoving = false;
     this.gForce = 0;
+    this.initializeKeyListeners();
+  }
+  refresh(){
+    if (this.isJumping){
+      this.yPos = this.yPos - this.yVelo;
+      this.yVelo = this.yVelo - this.gravity;
+
+    }
+    else{
+
+    }
+    if(this.xVelo != 0 ){
+        this.xVelo = this.xVelo - Math.sign(this.xVelo)*this.friction*0.01;
+    }
+    else{
+
+    }
+    this.xPos = this.xPos + this.xVelo;
+
+    this.xVelo = this.xVelo + this.xAccel;
   }
   getWidth(){
     return this.width;
@@ -83,21 +104,31 @@ class bigCheese {
     window.addEventListener("keydown", function(e) { //W = 87
       if(e.key == "w"){//87
         console.log('w');
-        self.startJumpTime = performance.now();
-        self.yVelo = 10; //dummy value
-        self.move(87);
+        //self.startJumpTime = performance.now();
+        self.yVelo = 5; //dummy value
+
       };
       if(e.key == "a"){//65
-        console.log('a');
+        console.log('xVelo '+ self.xVelo);
+
+        if(self.xVelo >0){
+          self.xAccel = -0.05;
+          console.log("bruh ");
+        }
+        else{
         self.xVelo = -5;
-        self.move(65);
-        self.xVelo = 0;
+        }
       };
       if(e.key == "d"){//68
         console.log('d');
-      self.xVelo = 5;
-      self.move(68);
-      self.xVelo = 0;
+        if(self.xVelo <0){
+          self.xAccel = 0.05;
+          console.log("bruh");
+        }
+        else{
+        self.xVelo = 5;
+        }
+
       };
     });
   }
