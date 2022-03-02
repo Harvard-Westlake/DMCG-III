@@ -13,7 +13,7 @@ class leftCheese  {
     this.isMoving = false;
     this.gravity = 9.81;
     this.gForce = 0;
-    initializeKeyListeners();
+    this.initializeKeyListeners();
   }
   getX(){
     return xPos;
