@@ -17,7 +17,7 @@ class Level {
     this.cheeseImage = new Image();
     this.cheeseImage.src = cheeseTexture;
     this.goalImage = new Image();
-    this.goalImage.src = goalImage;
+    this.goalImage.src = doorTexture;
   }
   massDisable(){
     this.cancelled = true;
