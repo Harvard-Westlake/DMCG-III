@@ -1,8 +1,10 @@
 
 class Level {
 
-  constructor(platforms, traps, cheeses) {
+  constructor(platforms, traps, cheeses,goal) {
     this.platforms = platforms;
+    this.goal = goal;
+    this.won = false;
     this.traps = traps;
     this.cheeses = cheeses;
     this.background = new Image();
@@ -130,6 +132,16 @@ class Level {
   }
   enable(){
     this.enabled = true;
+  }
+  collisionCheck(){
+    for(int ){
+
+    }
+  }
+  win(){
+    this.disable();
+    this.massDisable();
+    this.won = true;
   }
 
 }
