@@ -16,7 +16,6 @@ class Level {
     this.cheeseImage.src = cheeseTexture;
   }
 
-
   //draws every object stored in this Level onto the HTML canvas
   drawAllObjects(context) {
 
