@@ -7,7 +7,7 @@ class Level {
     this.cheeses = cheeses;
     this.background = new Image();
     this.background.src = backgroundTexture;
-    this.cancelled = false;
+    this.enabled = false;
     this.platformImage = new Image();
     this.platformImage.src = platformTexture;
     this.trapImage = new Image();
@@ -15,8 +15,14 @@ class Level {
     this.cheeseImage = new Image();
     this.cheeseImage.src = cheeseTexture;
   }
+  enable(){
+    this.enabled = true;
+  }
+  disable(){
+    this.enabled = false;
+  }
   massDisable(){
-    this.cancelled = true;
+    this.enabled = true;
       for (var i = 0; i < this.platforms.length; i++) {
         //this.platforms[i].disable();
         console.log(this,"im an disabled platform and proof that everything should work once it's progreammed",this.platforms[i])
@@ -30,7 +36,7 @@ class Level {
       }
   }
   massEnable(){
-    this.cancelled = true;
+    this.enabled = true;
       for (var i = 0; i < this.platforms.length; i++) {
       //  this.platforms[i].enable();
       console.log(this,"im an enabled platform and proof that everything should work once it's progreammed",this.platforms[i])
@@ -115,7 +121,7 @@ class Level {
     }
     //refresh ur ass
 
-    if(!this.cancelled){
+    if(!this.enabled){
     for(var c=0;c<this.cheeses.length;c++){
       this.cheeses[c].refresh();
     }
@@ -144,7 +150,7 @@ class Level {
 
   }
   cancel(){
-    this.cancelled = true;
+    this.enabled = true;
   }
 
   //called every frame, checks the position of any cheese or MiniCheese against platforms and traps, enforces basic collision protocol if overlap found
