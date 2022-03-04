@@ -13,8 +13,20 @@ class rightCheese  {
     this.isMoving = false;
     this.gravity = 9.81;
     this.gForce = 0;
+    this.initializeKeyListeners();
   }
-
+  getX(){
+    return this.xPos;
+  }
+  getY(){
+    return this.yPos;
+  }
+  getWidth(){
+    return this.width;
+  }
+  getHeight(){
+    return this.height;
+  }
   move(){
     console.log('moved');
   }
