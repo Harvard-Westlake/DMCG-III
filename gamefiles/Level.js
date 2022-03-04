@@ -132,5 +132,21 @@ class Level {
         console.log("i EXIST");
       }
     }
+    if (Math.floor(cheese.getY()) >= 450) {
+      cheese.setYVelo(0);
+      cheese.setYPos(450);
+      cheese.setIsJumping(false);
+      console.log("I also exist");
+    }
+
+    if (Math.floor(cheese.getX()) <= 0) {
+      cheese.setXVelo(0);
+      cheese.setXPos(0);
+    }
+
+    if (Math.floor(cheese.getX() >= 850)) {
+      cheese.setXVelo(0);
+      cheese.setXPos(850);
+    }
   }
 }

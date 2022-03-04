@@ -5,7 +5,7 @@ class bigCheese {
     this.jumpCooldown = 0.5;
     this.canJump = true;
     this.isSplit = false;
-    this.xPos = 0;
+    this.xPos = 20;
     this.yPos = 100;
     this.width = 50;
     this.height = 50;
