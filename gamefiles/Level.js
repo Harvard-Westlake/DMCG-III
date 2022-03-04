@@ -19,6 +19,12 @@ class Level {
     this.goalImage = new Image();
     this.goalImage.src = doorTexture;
   }
+  disable(){
+    this.enabled = false;
+  }
+  enable(){
+    this.enabled = true;
+  }
   massDisable(){
     this.cancelled = true;
 
@@ -132,6 +138,7 @@ class Level {
     // Call draw when the website is ready
     window.requestAnimationFrame(this.draw.bind(this));
   }
+}
   //called every frame, checks the position of any cheese or MiniCheese against platforms and traps, enforces basic collision protocol if overlap found
   checkCollision(cheese, otherObject) {
     var isColliding = false;

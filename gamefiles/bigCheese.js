@@ -107,7 +107,12 @@ class bigCheese {
   updateYPos() {
 
   }
-
+  enable(){
+      this.enabled = true;
+    }
+    disable(){
+      this.enabled = false;
+    }
   initializeKeyListeners() {
     let self = this;
     window.addEventListener("keydown", function(e) { //W = 87
