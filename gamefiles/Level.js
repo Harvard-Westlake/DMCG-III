@@ -16,6 +16,8 @@ class Level {
     this.trapImage.src = trapTexture;
     this.cheeseImage = new Image();
     this.cheeseImage.src = cheeseTexture;
+    this.goalImage = new Image();
+    this.goalImage.src = goalImage;
   }
   massDisable(){
     this.cancelled = true;
@@ -133,11 +135,7 @@ class Level {
   enable(){
     this.enabled = true;
   }
-  collisionCheck(){
-    for(int ){
 
-    }
-  }
   win(){
     this.disable();
     this.massDisable();
