@@ -17,7 +17,7 @@ class bigCheese {
     this.friction = 10;
     this.isMoving = false;
     this.gForce = 0;
-    this.isJumping = false;
+    this.isJumping = true;
     this.initializeKeyListeners();
   }
   refresh() {
