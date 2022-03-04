@@ -6,8 +6,8 @@ class bigCheese {
     this.jumpCooldown = 0.5;
     this.canJump = true;
     this.isSplit = false;
-    this.xPos = 0;
-    this.yPos = 200;
+    this.xPos = 20;
+    this.yPos = 100;
     this.width = 50;
     this.height = 50;
     this.xAccel = 0;
@@ -17,6 +17,7 @@ class bigCheese {
     this.friction = 10;
     this.isMoving = false;
     this.gForce = 0;
+    this.isJumping = false;
     this.initializeKeyListeners();
   }
   refresh() {
@@ -25,12 +26,14 @@ class bigCheese {
         this.yPos = this.yPos - this.yVelo;
         this.yVelo = this.yVelo - this.gravity;
 
-      } else {
-
-      }
-      if (this.xVelo != 0) {
-        this.xVelo = this.xVelo - Math.sign(this.xVelo) * this.friction * 0.01;
-      } else {
+    }
+    else{
+      this.yVelo = 0;
+    }
+    if(this.xVelo != 0 ){
+        this.xVelo = this.xVelo - Math.sign(this.xVelo)*this.friction*0.01;
+    }
+    else{
 
       }
       this.xPos = this.xPos + this.xVelo;
@@ -68,19 +71,24 @@ class bigCheese {
   setYVelo(number) {
     this.yVelo = number;
   }
-
-  move(direction) {
-    if (this.isAlive == true) {
-      switch (direction) {
-        case 87:
-          this.jump();
-          break;
-        case 65:
-          this.xPos = this.xPos + this.xVelo;
-          break;
-        case 68:
-          this.xPos = this.xPos + this.xVelo;
-          break;
+  setIsJumping(val) {
+    this.isJumping = val;
+  }
+  /*move(direction) {
+      if(this.isAlive == true){
+        switch(direction){
+          case 87:
+            this.jump();
+            break;
+          case 65:
+            this.xPos = this.xPos + this.xVelo;
+            break;
+          case 68:
+            this.xPos = this.xPos + this.xVelo;
+            break;
+        }
+        //Level.checkForCollision();
+        //Level.checkForLand();
       }
       //Level.checkForCollision();
       //Level.checkForLand();
@@ -95,12 +103,9 @@ class bigCheese {
     this.yPos = this.yVelo * this.currentAirTime - (0.5 * this.gravity * this.currentAirTime * this.currentAirTime);
     this.yVelo = this.yVelo + (this.gravity * this.currentAirTime);
   }
+*/
+  updateYPos() {
 
-  enable(){
-    this.enabled = true;
-  }
-  disable(){
-    this.enabled = false;
   }
 
   initializeKeyListeners() {
