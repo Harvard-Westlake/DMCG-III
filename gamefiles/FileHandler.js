@@ -1,6 +1,7 @@
 //*ALL TEXTURES HERE ARE NAMED THE WAY THE TEXTURES ARE NAMED IN THE NAME CLEANUP
 //textures
 const platformTexture = "../Assets/platform.png";
+const backgroundTexture = "../Assets/backgroundtexture.png";
 const cheeseTexture = "../Assets/cheese.png";
 const hatCheeseTexture = "../Assets/hatcheese.gif";
 const trapTexture = "../Assets/trap.png";

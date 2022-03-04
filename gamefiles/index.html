@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <!-- please link your code in this area; do not link elsewhere --->
+
+    <script type = "text/javascript" src="Level.js"> </script>
+    <script src="Platform.js"> </script>
+    <script src = "Trap.js"> </script>
+    <script src = "bigCheese.js"> </script>
+    <script>
+    var plat1 = [ new Platform(100,100,50,50, false),new Platform(300,100,25,40, false)];
+    var ches = new bigCheese();
+    ches.initializeKeyListeners();
+    var ches1 = [ches];
+    var trap1 = [ new Trap(100,100,50,50, false)];
+    var lev1 = new Level (plat1, trap1, ches1);
+
+
+
+    let upKey;
+    let leftKey;
+    let rightKey;
+    let downKey;
+
+    console.log("Value upKey = ")
+    console.log(upKey)
+    console.log("Value downKey = ")
+    console.log(downKey)
+    console.log("Value leftKey = ")
+    console.log(leftKey)
+    console.log("Value rightKey = ")
+    console.log(rightKey)
+    lev1.initializeAnimation();
+    checkInputsPressed ();
+    checkInputsReleased();
+    function checkInputsPressed ()
+    {
+      document.addEventListener("keydown", function(event){
+        if(event.key === "w")
+        {
+          upKey = true;
+            console.log(event.key +" pressed")
+            console.log("Value upKey is:")
+            console.log(upKey);
+        }
+        else if(event.key === "a")
+        {
+          leftKey = true;
+          console.log(event.key +" pressed")
+          console.log("Value leftKey is:")
+          console.log(leftKey);
+        }
+        else if(event.key === "d")
+        {
+          rightKey = true;
+          console.log(event.key +" pressed")
+          console.log("Value rightKey is:")
+          console.log(rightKey);
+        }
+        else if(event.key === "s")
+        {
+          downKey = true;
+          console.log(event.key +" pressed")
+          console.log("Value downKey is:")
+          console.log(downKey);
+        }
+      });
+    }
+    function checkInputsReleased ()
+    {
+    document.addEventListener("keyup", function(event){
+        if(event.key === "w")
+        {
+          upKey = false;
+            console.log(event.key +" released")
+            console.log("Value upKey is:")
+            console.log(upKey);
+        }
+        else if(event.key === "a")
+        {
+          leftKey = false;
+          console.log(event.key +" released")
+          console.log("Value leftKey is:")
+          console.log(leftKey);
+        }
+        else if(event.key === "s")
+        {
+          downKey = false;
+          console.log(event.key +" released")
+          console.log("Value downKey is:")
+          console.log(downKey);
+        }
+        else if(event.key === "d")
+        {
+          rightKey = false;
+          console.log(event.key +" released")
+          console.log("Value rightKey is:")
+          console.log(rightKey);
+        }
+      });
+      }
+
+
+    </script>
+
+    <!-- please link the website stylesheet in this tag; do not link elsewhere --->
+    <link>
+  </head>
+<script src = "FileHandler.js"></script>
+  <body>
+
+    <h1> WELCOME TO DEATH METAL CHEESE GRATER THREE </h1>
+    <br />
+
+    <h6> not to be mistaken with death metal cheese grater two </h6>
+    <!-- this is where the game will be animated onto; start button included in this skeleton --->
+    <canvas id="canvas" width="900" height="500" class = one></canvas>
+    <p> test <br /> please connect your code to this le canvas drawing shit needs to be basically handled </p>
+    <input type="button" id="startGame" value="PLAY BUTTON" />
+
+  </body>
+
+</html>
