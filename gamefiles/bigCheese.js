@@ -1,6 +1,6 @@
 class bigCheese {
   constructor() {
-
+    this.enabled = false;
     this.splitArr = [];
     this.isAlive = true;
     this.jumpCooldown = 0.5;
@@ -19,75 +19,75 @@ class bigCheese {
     this.gForce = 0;
     this.initializeKeyListeners();
   }
-  refresh(){
-    if (this.isJumping){
-      this.yPos = this.yPos - this.yVelo;
-      this.yVelo = this.yVelo - this.gravity;
+  refresh() {
+    if (this.enabled) {
+      if (this.isJumping) {
+        this.yPos = this.yPos - this.yVelo;
+        this.yVelo = this.yVelo - this.gravity;
 
-    }
-    else{
+      } else {
 
-    }
-    if(this.xVelo != 0 ){
-        this.xVelo = this.xVelo - Math.sign(this.xVelo)*this.friction*0.01;
-    }
-    else{
+      }
+      if (this.xVelo != 0) {
+        this.xVelo = this.xVelo - Math.sign(this.xVelo) * this.friction * 0.01;
+      } else {
 
-    }
-    this.xPos = this.xPos + this.xVelo;
+      }
+      this.xPos = this.xPos + this.xVelo;
 
-    this.xVelo = this.xVelo + this.xAccel;
+      this.xVelo = this.xVelo + this.xAccel;
+    }
   }
-  getWidth(){
+  getWidth() {
     return this.width;
   }
-  getHeight(){
+  getHeight() {
     return this.height;
   }
-  getX(){
+  getX() {
     return this.xPos;
   }
-  getY(){
+  getY() {
     return this.yPos;
   }
-  getXVelo(){
+  getXVelo() {
     return this.xVelo;
   }
-  getYVelo(){
+  getYVelo() {
     return this.yVelo;
   }
-  setXPos(number){
+  setXPos(number) {
     this.xPos = number;
   }
-  setYPos(number){
+  setYPos(number) {
     this.yPos = number;
   }
-  setXVelo(number){
+  setXVelo(number) {
     this.xVelo = number;
   }
-  setYVelo(number){
+  setYVelo(number) {
     this.yVelo = number;
   }
 
   move(direction) {
-      if(this.isAlive == true){
-        switch(direction){
-          case 87:
-            this.jump();
-            break;
-          case 65:
-            this.xPos = this.xPos + this.xVelo;
-            break;
-          case 68:
-            this.xPos = this.xPos + this.xVelo;
-            break;
-        }
-        //Level.checkForCollision();
-        //Level.checkForLand();
+    if (this.isAlive == true) {
+      switch (direction) {
+        case 87:
+          this.jump();
+          break;
+        case 65:
+          this.xPos = this.xPos + this.xVelo;
+          break;
+        case 68:
+          this.xPos = this.xPos + this.xVelo;
+          break;
       }
+      //Level.checkForCollision();
+      //Level.checkForLand();
+    }
   }
 
-  jump(){
+  jump() {
     this.isJumping = true;
     this.currentAirTime = performance.now() - this.startJumpTime;
     this.isMoving = true;
@@ -96,70 +96,74 @@ class bigCheese {
     this.yVelo = this.yVelo + (this.gravity * this.currentAirTime);
   }
 
-  updateYPos() {
-
+  enable(){
+    this.enabled = true;
+  }
+  disable(){
+    this.enabled = false;
   }
 
-  initializeKeyListeners(){
+  initializeKeyListeners() {
     let self = this;
     window.addEventListener("keydown", function(e) { //W = 87
-      if(e.key == "w"){//87
-        console.log('w');
-        //self.startJumpTime = performance.now();
-        self.yVelo = 5; //dummy value
+      if (self.enabled) {
 
-      };
-      if(e.key == "a"){//65
-        console.log("a pressed");
-      //  console.log('xVelo '+ self.xVelo);
+        if (e.key == "w") { //87
+          console.log(self,'w');
+          //self.startJumpTime = performance.now();
+          self.yVelo = 5; //dummy value
 
-        if(self.xVelo >0){
-          self.xAccel = -0.05;
-        //  console.log("bruh ");
-        }
-        else{
-        self.xVelo = -5;
-        }
-      };
-      if(e.key == "d"){//68
-        //console.log('d');
-        if(self.xVelo <0){
-          self.xAccel = 0.05;
-          //console.log("bruh");
-        }
-        else{
-        self.xVelo = 5;
-        }
+        };
+        if (e.key == "a") { //65
+          //    console.log("a pressed");
+          //  console.log('xVelo '+ self.xVelo);
 
-      };
+          if (self.xVelo > 0) {
+            self.xAccel = -0.05;
+            //  console.log("bruh ");
+          } else {
+            self.xVelo = -5;
+          }
+        };
+        if (e.key == "d") { //68
+          //console.log('d');
+          if (self.xVelo < 0) {
+            self.xAccel = 0.05;
+            //console.log("bruh");
+          } else {
+            self.xVelo = 5;
+          }
+
+        };
+      }
     });
   }
-    // if (document.getElementById(87).addEventListener("click", function()) && this.isAlive == true && this.isMoving == true) {
-    //   yPos = yPos - 1;
-    //   canJump = false;
-    //   yVelo++;
-    //   yVelo = yVelo - (yVelo * 2);
-    //   let t = setInterval(addYVelo(), 16.6666666667);
-    //   clearInterval(t);
-    //   while (isMoving = false || checkForCollision().equals(false)) {
-    //     let a = setInterval(gravitationalForce(), 16.6666666667);
-    //   }
-    //   clearInterval(t);
-    // }
+  // if (document.getElementById(87).addEventListener("click", function()) && this.isAlive == true && this.isMoving == true) {
+  //   yPos = yPos - 1;
+  //   canJump = false;
+  //   yVelo++;
+  //   yVelo = yVelo - (yVelo * 2);
+  //   let t = setInterval(addYVelo(), 16.6666666667);
+  //   clearInterval(t);
+  //   while (isMoving = false || checkForCollision().equals(false)) {
+  //     let a = setInterval(gravitationalForce(), 16.6666666667);
+  //   }
+  //   clearInterval(t);
+  // }
 
-    // if (document.getElementById(65).addEventListener("click", function()) && this.isAlive == true && this.isMoving == true) {
-    //   xVelo++;
-    //   xVelo = xVelo - (xVelo * 2);
-    //   let t = setInterval(addXVelo(), 16.6666666667);
-    //   clearInterval(t);
-    // }
+  // if (document.getElementById(65).addEventListener("click", function()) && this.isAlive == true && this.isMoving == true) {
+  //   xVelo++;
+  //   xVelo = xVelo - (xVelo * 2);
+  //   let t = setInterval(addXVelo(), 16.6666666667);
+  //   clearInterval(t);
+  // }
 
-      // if (document.getElementById(68).addEventListener("click", function()) && this.isAlive == true && this.isMoving == true) {
-      //   xVelo++;
-      //   xVelo = Math.abs(xVelo);
-      //   let t = setInterval(addXVelo(), 16.6666666667);
-      //   clearInterval(t);
-      // }
+  // if (document.getElementById(68).addEventListener("click", function()) && this.isAlive == true && this.isMoving == true) {
+  //   xVelo++;
+  //   xVelo = Math.abs(xVelo);
+  //   let t = setInterval(addXVelo(), 16.6666666667);
+  //   clearInterval(t);
+  // }
 
   addYVelo() {
     yPos = yPos + yVelo;
@@ -193,12 +197,12 @@ class bigCheese {
     jumpCooldown = jumpCooldown - 0.1;
   }
   split() {
-    if(jumpCooldown == true) return;
+    if (jumpCooldown == true) return;
     isSplit = true;
     //https://stackoverflow.com/questions/9419263/how-to-play-audio
-    var audio = new Audio(dreamaboutcheese);//which audio file is it supposed to be?
+    var audio = new Audio(dreamaboutcheese); //which audio file is it supposed to be?
     audio.play();
-    const left = new LeftCheese();//need velo inputs?
+    const left = new LeftCheese(); //need velo inputs?
     const middle = new MiddleCheese();
     const right = new RightCheese();
     splitArr[0] = left;
@@ -242,8 +246,8 @@ class bigCheese {
   //  }
   // }
 
-    die(){
-      isAlive = false;
-      //micah figure out ur sh*t bro
-    }
+  die() {
+    isAlive = false;
+    //micah figure out ur sh*t bro
   }
+}

@@ -7,7 +7,7 @@ class Level {
     this.cheeses = cheeses;
     this.background = new Image();
     this.background.src = backgroundTexture;
-    this.cancelled = false;
+    this.enabled = false;
     this.platformImage = new Image();
     this.platformImage.src = platformTexture;
     this.trapImage = new Image();
@@ -17,29 +17,16 @@ class Level {
   }
   massDisable(){
     this.cancelled = true;
-      for (var i = 0; i < this.platforms.length; i++) {
-        //this.platforms[i].disable();
-        console.log(this,"im an disabled platform and proof that everything should work once it's progreammed",this.platforms[i])
 
-      }
-      for (var i = 0; i < this.traps.length; i++) {
-      //  this.traps[i].disable();
-      }
       for (var i = 0; i < this.cheeses.length; i++) {
-      //  this.cheeses[i].disable();
+        this.cheeses[i].disable();
       }
   }
   massEnable(){
     this.cancelled = true;
-      for (var i = 0; i < this.platforms.length; i++) {
-      //  this.platforms[i].enable();
-      console.log(this,"im an enabled platform and proof that everything should work once it's progreammed",this.platforms[i])
-      }
-      for (var i = 0; i < this.traps.length; i++) {
-      //  this.traps[i].enable();
-      }
+
       for (var i = 0; i < this.cheeses.length; i++) {
-      //  this.cheeses[i].enable();
+        this.cheeses[i].enable();
       }
   }
   //draws every object stored in this Level onto the HTML canvas
@@ -112,7 +99,7 @@ class Level {
   draw() {
     //refresh ur ass
 
-    if(!this.cancelled){
+    if(this.enabled){
     for(var c=0;c<this.cheeses.length;c++){
       this.cheeses[c].refresh();
     }
@@ -138,8 +125,11 @@ class Level {
     window.requestAnimationFrame(this.draw.bind(this));
   }
   }
-  cancel(){
-    this.cancelled = true;
+  disable(){
+    this.enabled = false;
+  }
+  enable(){
+    this.enabled = true;
   }
 
 }

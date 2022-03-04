@@ -15,12 +15,14 @@ class LevelManager {
 loadLevel(lvl){
   for(let l = 0; l<this.levels.length;l++){
     if(l!=lvl){
-    this.levels[l].cancelled = true;
+    this.levels[l].disable();
     this.levels[l].massDisable();
     }
     else{
-      this.levels[l].cancelled = false;
+      console.log(lvl==l);
+      this.levels[l].enable();
       this.levels[l].massEnable();
+
     }
   }
   this.levels[lvl].initializeAnimation();
