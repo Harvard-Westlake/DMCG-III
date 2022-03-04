@@ -168,6 +168,12 @@ split() {
     // Call draw when the website is ready
     window.requestAnimationFrame(this.draw.bind(this));
   }
+
+  }
+  cancel(){
+    this.cancelled = true;
+  }
+
   //called every frame, checks the position of any cheese or MiniCheese against platforms and traps, enforces basic collision protocol if overlap found
   checkCollision(cheese, otherObject) {
     var isColliding = false;
