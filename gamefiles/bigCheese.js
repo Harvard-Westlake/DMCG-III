@@ -1,5 +1,6 @@
 class bigCheese {
   constructor() {
+
     this.splitArr = [];
     this.isAlive = true;
     this.jumpCooldown = 0.5;
@@ -13,7 +14,7 @@ class bigCheese {
     this.xVelo = 0;
     this.yVelo = 0;
     this.gravity = 0.09;
-    this.friction = 5;
+    this.friction = 10;
     this.isMoving = false;
     this.gForce = 0;
     this.initializeKeyListeners();
@@ -109,21 +110,22 @@ class bigCheese {
 
       };
       if(e.key == "a"){//65
-        console.log('xVelo '+ self.xVelo);
+        console.log("a pressed");
+      //  console.log('xVelo '+ self.xVelo);
 
         if(self.xVelo >0){
           self.xAccel = -0.05;
-          console.log("bruh ");
+        //  console.log("bruh ");
         }
         else{
         self.xVelo = -5;
         }
       };
       if(e.key == "d"){//68
-        console.log('d');
+        //console.log('d');
         if(self.xVelo <0){
           self.xAccel = 0.05;
-          console.log("bruh");
+          //console.log("bruh");
         }
         else{
         self.xVelo = 5;
