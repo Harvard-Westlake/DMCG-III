@@ -14,7 +14,34 @@ class Level {
     this.trapImage.src = trapTexture;
     this.cheeseImage = new Image();
     this.cheeseImage.src = cheeseTexture;
+    this.isSplit = false;
   }
+
+  initializeKeyListeners(){
+  let self = this;
+  window.addEventListener("keydown", function(e) { //W = 87
+    if(e.key == "e"){
+      console.log("e pressed. split!");
+      self.isSplit = true;
+      self.split();
+    }
+    });
+  }
+
+split() {
+  //if(jumpCooldown == true) return;
+  //https://stackoverflow.com/questions/9419263/how-to-play-audio
+  var audio = new Audio("../Assets/dreamaboutcheese.mp3");//which audio file is it supposed to be?
+  audio.play();
+  const left = new leftCheese();//need velo inputs?
+  const middle = new MiddleCheese();
+  const right = new RightCheese();
+  splitArr[0] = left;
+  splitArr[1] = middle;
+  splitArr[2] = right;
+}
+
+
   massDisable(){
     this.cancelled = true;
       for (var i = 0; i < this.platforms.length; i++) {
