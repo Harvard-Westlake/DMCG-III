@@ -1,5 +1,6 @@
 class leftCheese  {
   constructor() {
+    this.enabled = false;
     this.isAlive = true;
     this.canJump = false;
     this.isSplit = true;

@@ -1,21 +1,44 @@
 
 class Level {
 
-  constructor(platforms, traps, cheeses) {
+  constructor(platforms, traps, cheeses,goal) {
     this.platforms = platforms;
+    this.goal = goal;
+    this.won = false;
     this.traps = traps;
     this.cheeses = cheeses;
     this.background = new Image();
     this.background.src = backgroundTexture;
-
+    this.enabled = false;
     this.platformImage = new Image();
     this.platformImage.src = platformTexture;
     this.trapImage = new Image();
     this.trapImage.src = trapTexture;
     this.cheeseImage = new Image();
     this.cheeseImage.src = cheeseTexture;
+    this.goalImage = new Image();
+    this.goalImage.src = doorTexture;
   }
+  disable(){
+    this.enabled = false;
+  }
+  enable(){
+    this.enabled = true;
+  }
+  massDisable(){
+    this.cancelled = true;
 
+      for (var i = 0; i < this.cheeses.length; i++) {
+        this.cheeses[i].disable();
+      }
+  }
+  massEnable(){
+    this.cancelled = true;
+
+      for (var i = 0; i < this.cheeses.length; i++) {
+        this.cheeses[i].enable();
+      }
+  }
   //draws every object stored in this Level onto the HTML canvas
   drawAllObjects(context) {
 
@@ -88,6 +111,8 @@ class Level {
       this.checkCollision(this.cheeses[0], this.platforms[i]);
     }
     //refresh ur ass
+
+    if(this.enabled){
     for(var c=0;c<this.cheeses.length;c++){
       this.cheeses[c].refresh();
     }
@@ -113,6 +138,7 @@ class Level {
     // Call draw when the website is ready
     window.requestAnimationFrame(this.draw.bind(this));
   }
+}
   //called every frame, checks the position of any cheese or MiniCheese against platforms and traps, enforces basic collision protocol if overlap found
   checkCollision(cheese, otherObject) {
     var isColliding = false;
