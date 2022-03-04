@@ -27,9 +27,37 @@
     var trap1 = [ new Trap(100,100,50,50, false)];
     var lev1 = new Level (plat1, trap1, ches1);
 
+    \\create input variables
+    let upKey;
+    let leftKey;
+    let rightKey;
+    let downKey;
+
     lev1.initializeAnimation();
+    setupInputs ();
+    function setupInputs ()
+    {
+      document.addEventListener("keydown", function(event){
+        if(event.key === "w" || event.key === "ArrowUp")
+        {
+          upKey = true;
+        }
+        else if(event.key === "a" || event.key === "ArrowLeft")
+        {
+          upKey = true;
+        }
+        else if(event.key === "s" || event.key === "ArrowRight")
+        {
+          upKey = true;
+        }
+        else if(event.key === "d" || event.key === "ArrowDown")
+        {
+          upKey = true;
+        }
+      })
+    }
     </script>
-  
+
     <!-- please link the website stylesheet in this tag; do not link elsewhere --->
     <link>
   </head>
