@@ -5,22 +5,49 @@ class bigCheese {
     this.jumpCooldown = 0.5;
     this.canJump = true;
     this.isSplit = false;
-    this.xPos = 0;
-    this.yPos = 0;
-    this.width = 10;
-    this.height = 10;
+    this.xPos = 20;
+    this.yPos = 100;
+    this.width = 50;
+    this.height = 50;
+    this.xAccel = 0;
     this.xVelo = 0;
     this.yVelo = 0;
-    this.gravity = 9.81;
+    this.gravity = 0.09;
     this.friction = 5;
     this.isMoving = false;
     this.gForce = 0;
+    this.isJumping = false;
+    this.initializeKeyListeners();
   }
+  refresh(){
+    if (this.isJumping){
+      this.yPos = this.yPos - this.yVelo;
+      this.yVelo = this.yVelo - this.gravity;
 
-  getXPos(){
+    }
+    else{
+      this.yVelo = 0;
+    }
+    if(this.xVelo != 0 ){
+        this.xVelo = this.xVelo - Math.sign(this.xVelo)*this.friction*0.01;
+    }
+    else{
+
+    }
+    this.xPos = this.xPos + this.xVelo;
+
+    this.xVelo = this.xVelo + this.xAccel;
+  }
+  getWidth(){
+    return this.width;
+  }
+  getHeight(){
+    return this.height;
+  }
+  getX(){
     return this.xPos;
   }
-  getYPos(){
+  getY(){
     return this.yPos;
   }
   getXVelo(){
@@ -41,8 +68,10 @@ class bigCheese {
   setYVelo(number){
     this.yVelo = number;
   }
-
-  move(direction) {
+  setIsJumping(val) {
+    this.isJumping = val;
+  }
+  /*move(direction) {
       if(this.isAlive == true){
         switch(direction){
           case 87:
@@ -68,7 +97,7 @@ class bigCheese {
     this.yPos = this.yVelo * this.currentAirTime - (0.5 * this.gravity * this.currentAirTime * this.currentAirTime);
     this.yVelo = this.yVelo + (this.gravity * this.currentAirTime);
   }
-
+*/
   updateYPos() {
 
   }
@@ -78,21 +107,31 @@ class bigCheese {
     window.addEventListener("keydown", function(e) { //W = 87
       if(e.key == "w"){//87
         console.log('w');
-        self.startJumpTime = performance.now();
-        self.yVelo = 10; //dummy value
-        self.move(87);
+        //self.startJumpTime = performance.now();
+        self.yVelo = 5; //dummy value
+
       };
       if(e.key == "a"){//65
-        console.log('a');
+        console.log('xVelo '+ self.xVelo);
+
+        if(self.xVelo >0){
+          self.xAccel = -0.05;
+          console.log("bruh ");
+        }
+        else{
         self.xVelo = -5;
-        self.move(65);
-        self.xVelo = 0;
+        }
       };
       if(e.key == "d"){//68
         console.log('d');
-      self.xVelo = 5;
-      self.move(68);
-      self.xVelo = 0;
+        if(self.xVelo <0){
+          self.xAccel = 0.05;
+          console.log("bruh");
+        }
+        else{
+        self.xVelo = 5;
+        }
+
       };
     });
   }
@@ -158,7 +197,7 @@ class bigCheese {
     if(jumpCooldown == true) return;
     isSplit = true;
     //https://stackoverflow.com/questions/9419263/how-to-play-audio
-    var audio = new Audio('Sometimes i dream about cheese Sound Effect (Clean).mp3');//which audio file is it supposed to be?
+    var audio = new Audio(dreamaboutcheese);//which audio file is it supposed to be?
     audio.play();
     const left = new LeftCheese();//need velo inputs?
     const middle = new MiddleCheese();

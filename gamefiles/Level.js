@@ -53,7 +53,7 @@ class Level {
       context.restore();
 
     }
-    /*
+
         for (var i = 0; i < this.cheeses.length; i++) {
         let platformImage2 = new Image();
         platformImage2.src = cheeseTexture;
@@ -71,7 +71,7 @@ class Level {
           context.restore();
           context.save();
         }
-    */
+
     context.save();
     context.beginPath();
     context.drawImage(this.background, 0, 0, context.canvas.clientWidth, context.canvas.clientHeight);
@@ -85,6 +85,14 @@ class Level {
 
   //interfaces with website to connect to game Canvas
   draw() {
+    for (var i = 0; i < this.platforms.length; i++) {
+      this.checkCollision(this.cheeses[0], this.platforms[i]);
+    }
+    //refresh ur ass
+    for(var c=0;c<this.cheeses.length;c++){
+      this.cheeses[c].refresh();
+    }
+
     let context = document.getElementById('canvas').getContext('2d');
     //    console.log(context);
 
@@ -102,8 +110,44 @@ class Level {
     context.restore();
 
 
+
     // Call draw when the website is ready
     window.requestAnimationFrame(this.draw.bind(this));
   }
+  //called every frame, checks the position of any cheese or MiniCheese against platforms and traps, enforces basic collision protocol if overlap found
+  checkCollision(cheese, otherObject) {
+    var isColliding = false;
+    //same Y position, given some leeway so if the cheese updates its position by more than 1 on any given frame it won't clip through a platform
+    if (cheese.getY() >= otherObject.getY() && cheese.getY() <= otherObject.getY() + otherObject.getHeight() || (cheese.getY() + cheese.getHeight() >= otherObject.getY() && cheese.getY() + cheese.getHeight() <= otherObject.getY() + otherObject.getHeight()) ) {
+      //only the two bottom corners of the cheese need to be checked for platform overlap in order for collision to occur
+      if (cheese.getX() >= otherObject.getX() && cheese.getX() <= otherObject.getX() + otherObject.getWidth()) {
+        cheese.setXVelo(0 + cheese.getXVelo()/10);
+        cheese.setYVelo(0);
+        cheese.setIsJumping(false);
+        console.log("i EXIST");
+      }
+      else if (cheese.getX() + cheese.getWidth() >= otherObject.getX() && cheese.getX() + cheese.getWidth() <= otherObject.getX() + otherObject.getWidth()) {
+        cheese.setIsJumping(false);
+        cheese.setXVelo(0 - cheese.getXVelo()/10);
+        cheese.setYVelo(0);
+        console.log("i EXIST");
+      }
+    }
+    if (Math.floor(cheese.getY()) >= 450) {
+      cheese.setYVelo(0);
+      cheese.setYPos(450);
+      cheese.setIsJumping(false);
+      console.log("I also exist");
+    }
 
+    if (Math.floor(cheese.getX()) <= 0) {
+      cheese.setXVelo(0);
+      cheese.setXPos(0);
+    }
+
+    if (Math.floor(cheese.getX() >= 850)) {
+      cheese.setXVelo(0);
+      cheese.setXPos(850);
+    }
+  }
 }
