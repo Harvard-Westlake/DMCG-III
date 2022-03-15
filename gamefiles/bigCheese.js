@@ -1,18 +1,34 @@
 class bigCheese {
-  constructor() {
+  constructor(xPos, yPos, xVelo, yVelo) {
+    if(xPos == undefined){
+      this.xPos = 0;
+    }else{
+      this.xPos = xPos;
+    }
+    if(yPos == undefined){
+      this.yPos = 0;
+    }else{
+      this.yPos = xPos;
+    }
+    if(xVelo == undefined){
+      this.xVelo = 0;
+    }else{
+      this.xVelo = xVelo;
+    }
+    if(yVelo == undefined){
+      this.yVelo = 0;
+    }else{
+      this.yVelo = yVelo;
+    }
     this.enabled = false;
     this.splitArr = [];
     this.isAlive = true;
     this.jumpCooldown = 0.5;
     this.canJump = true;
     this.isSplit = false;
-    this.xPos = 20;
-    this.yPos = 100;
     this.width = 50;
     this.height = 50;
     this.xAccel = 0;
-    this.xVelo = 0;
-    this.yVelo = 0;
     this.gravity = 0.09;
     this.friction = 10;
     this.isMoving = false;
@@ -204,20 +220,20 @@ class bigCheese {
   // }
 
   editJumpCooldown() {
-    jumpCooldown = jumpCooldown - 0.1;
+    this.jumpCooldown = this.jumpCooldown - 0.1;
   }
   split() {
-    if (jumpCooldown == true) return;
-    isSplit = true;
+    if (this.jumpCooldown == true) return;
+    this.isSplit = true;
     //https://stackoverflow.com/questions/9419263/how-to-play-audio
-    var audio = new Audio(dreamaboutcheese); //which audio file is it supposed to be?
-    audio.play();
-    const left = new LeftCheese(); //need velo inputs?
-    const middle = new MiddleCheese();
-    const right = new RightCheese();
-    splitArr[0] = left;
-    splitArr[1] = middle;
-    splitArr[2] = right;
+    //let audio = new Audio(dreamaboutcheese); //which audio file is it supposed to be?
+    //audio.play();
+    const left = new leftCheese(this.xPos, this.yPos, this.xVelo, this.yVelo); //need velo inputs?
+    const middle = new middleCheese(this.xPos, this.yPos, this.xVelo, this.yVelo);
+    const right = new rightCheese(this.xPos, this.yPos, this.xVelo, this.yVelo);
+    this.splitArr[0] = left;
+    this.splitArr[1] = middle;
+    this.splitArr[2] = right;
   }
 
   //https://stackoverflow.com/questions/26269433/check-javascript-condition-every-frame/26269529
