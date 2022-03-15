@@ -34,5 +34,4 @@ class Platform
   {
     return this.isTrap;
   }
-
 }

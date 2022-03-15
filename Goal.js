@@ -1,5 +1,5 @@
 
-class Level {
+class Goal {
 
   constructor(platforms, traps, cheeses,goal) {
     this.platforms = platforms;
@@ -173,15 +173,6 @@ class Level {
     if (Math.floor(cheese.getX() >= 850)) {
       cheese.setXVelo(0);
       cheese.setXPos(850);
-    }
-  }
-
-  ifGoalHit (cheese, goalIndex, nextLevel)
-  {
-    if (cheese.getX == this.platform[goalIndex].getX() && cheese.getY == this.platform[goalIndex].getY())
-    {
-      console.log("You beat this level!");
-      LevelManager.loadLevel(nextLevel)
     }
   }
 }
