@@ -161,6 +161,8 @@ class bigCheese {
           }
 
         };
+        if(e.key == "s"){
+          console.log("Split Activated!");
       }
     });
   }
