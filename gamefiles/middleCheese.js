@@ -1,6 +1,6 @@
-class leftCheese  {
+class middleCheese  {
+  //need method to check for jump status
   constructor(xPos, yPos, xVelo, yVelo) {
-    //may need xAccel
     if(xPos == undefined){
       this.xPos = 0;
     }else{
@@ -23,16 +23,18 @@ class leftCheese  {
     }
     this.enabled = false;
     this.isAlive = true;
+    this.jumpCooldown = 0.5;
     this.canJump = true;
     this.isSplit = false;
     this.width = 50;
     this.height = 50;
+    this.xAccel = 0;
     this.gravity = 0.09;
     this.friction = 10;
     this.isMoving = false;
     this.gForce = 0;
+    this.isJumping = true;
     this.initializeKeyListeners();
-    console.log("left has been created");
   }
   getX(){
     return this.xPos;
@@ -63,26 +65,17 @@ class leftCheese  {
     }
   }
 
-  enable(){
-      this.enabled = true;
-      console.log("enabled");
-    }
-    disable(){
-      this.enabled = false;
-      console.log("disabled");
-    }
-
   initializeKeyListeners(){
     let self = this;
     window.addEventListener("keydown", function(e) {
-      if(e.key == "a"){//65
-        console.log('leftCheese movin left!');
+      if(e.key == "w"){//65
+        console.log('middleCheese is jumping!');
         self.xVelo = -5;
         self.move(65);
         self.xVelo = 0;
       };
       if(e.key == "d"){//68
-        console.log('leftCheese movin right!');
+        console.log('d');
         self.xVelo = 5;
         self.move(68);
         self.xVelo = 0;
