@@ -165,7 +165,7 @@ class Level {
       cheese.canJump = true;
       cheese.setYVelo(0);
       cheese.setYPos(449.9);
-      cheese.isJumping =false;
+      //cheese.isJumping =false;
       cheese.canJump=true;
       console.log(cheese.isJumping);
     }

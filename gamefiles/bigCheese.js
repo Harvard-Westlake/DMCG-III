@@ -120,7 +120,7 @@ class bigCheese {
     window.addEventListener("keydown", function(e) { //W = 87
       if (self.enabled) {
 
-        if (e.key == "w"&&self.canJump) { //87
+        if (e.key == "w")/*&&self.canJump)*/ { //87
           console.log(self.canJump);
           console.log(self,'w');
           //self.startJumpTime = performance.now();
