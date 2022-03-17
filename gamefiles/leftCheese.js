@@ -15,6 +15,7 @@ class leftCheese  {
     this.gravity = 9.81;
     this.gForce = 0;
     this.initializeKeyListeners();
+    console.log("left has been created");
   }
   getX(){
     return this.xPos;
@@ -44,6 +45,15 @@ class leftCheese  {
       }
     }
   }
+
+  enable(){
+      this.enabled = true;
+      console.log("enabled");
+    }
+    disable(){
+      this.enabled = false;
+      console.log("disabled");
+    }
 
   initializeKeyListeners(){
     let self = this;

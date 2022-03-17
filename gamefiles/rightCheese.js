@@ -1,5 +1,6 @@
 class rightCheese  {
   constructor() {
+    this.isEnabled = false;
     this.isAlive = true;
     this.canJump = false;
     this.isSplit = true;
@@ -14,6 +15,7 @@ class rightCheese  {
     this.gravity = 9.81;
     this.gForce = 0;
     this.initializeKeyListeners();
+    console.log("right cheese has been created");
   }
   getX(){
     return this.xPos;
@@ -43,6 +45,16 @@ class rightCheese  {
       }
     }
   }
+
+  enable(){
+      this.enabled = true;
+      console.log("enabled");
+    }
+    disable(){
+      this.enabled = false;
+      console.log("disabled");
+    }
+
 
   initializeKeyListeners(){
     let self = this;

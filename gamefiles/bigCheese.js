@@ -19,6 +19,8 @@ class bigCheese {
     this.gForce = 0;
     this.isJumping = true;
     this.initializeKeyListeners();
+    this.LeftCheese = new leftCheese();
+    this.RightCheese = new rightCheese();
   }
   refresh() {
     if (this.enabled) {
@@ -208,7 +210,7 @@ class bigCheese {
   }
   split() {
     if (jumpCooldown == true) return;
-    isSplit = true;
+    this.isSplit = true;
     //https://stackoverflow.com/questions/9419263/how-to-play-audio
     var audio = new Audio(dreamaboutcheese); //which audio file is it supposed to be?
     audio.play();
