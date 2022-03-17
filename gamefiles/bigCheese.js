@@ -25,7 +25,7 @@ class bigCheese {
       if (this.isJumping) {
         this.yPos = this.yPos - this.yVelo;
         this.yVelo = this.yVelo - this.gravity;
-        //this.canJump = false;
+        this.canJump = false;
         this.editJumpCooldown();
 
     }
@@ -123,8 +123,8 @@ class bigCheese {
         if (e.key == "w") { //87
           console.log(self,'w');
           //self.startJumpTime = performance.now();
+          self.setYPos(self.yPos-15);
           self.yVelo = 5; //dummy value
-          self.setYPos(self.yPos-5);
           this.isJumping = true;
         };
         if (e.key == "a") { //65

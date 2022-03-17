@@ -161,8 +161,8 @@ class Level {
     }
     if (Math.floor(cheese.getY()) >= 450) {
       cheese.setYVelo(0);
-      cheese.setYPos(450);
-      cheese.setIsJumping(false);
+      cheese.setYPos(449.9);
+      //cheese.isJumping =false;
       cheese.canJump=true;
       console.log("I also exist");
     }
