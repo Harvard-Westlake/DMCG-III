@@ -146,7 +146,6 @@ class Level {
     if (cheese.getY() >= otherObject.getY() && cheese.getY() <= otherObject.getY() + otherObject.getHeight() || (cheese.getY() + cheese.getHeight() >= otherObject.getY() && cheese.getY() + cheese.getHeight() <= otherObject.getY() + otherObject.getHeight()) ) {
       //only the two bottom corners of the cheese need to be checked for platform overlap in order for collision to occur
       if (cheese.getX() >= otherObject.getX() && cheese.getX() <= otherObject.getX() + otherObject.getWidth()) {
-        cheese.canJump = true;
         cheese.setXVelo(0 + cheese.getXVelo()/10);
         cheese.setYVelo(0);
         cheese.setIsJumping(false);
@@ -155,7 +154,6 @@ class Level {
         console.log("i EXIST");
       }
       else if (cheese.getX() + cheese.getWidth() >= otherObject.getX() && cheese.getX() + cheese.getWidth() <= otherObject.getX() + otherObject.getWidth()) {
-        cheese.canJump = true;
         cheese.setIsJumping(false);
         cheese.setXVelo(0 - cheese.getXVelo()/10);
         cheese.setYVelo(0);
@@ -167,9 +165,9 @@ class Level {
       cheese.canJump = true;
       cheese.setYVelo(0);
       cheese.setYPos(449.9);
-      //cheese.isJumping =false;
+      cheese.isJumping =false;
       cheese.canJump=true;
-      console.log(cheese.canJump);
+      console.log(cheese.isJumping);
     }
 
     if (Math.floor(cheese.getX()) <= 0) {

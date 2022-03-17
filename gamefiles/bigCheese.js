@@ -26,7 +26,7 @@ class bigCheese {
         this.yPos = this.yPos - this.yVelo;
         this.yVelo = this.yVelo - this.gravity;
         this.canJump = false;
-        this.editJumpCooldown();
+        //this.editJumpCooldown();
 
     }
     else{
@@ -120,10 +120,11 @@ class bigCheese {
     window.addEventListener("keydown", function(e) { //W = 87
       if (self.enabled) {
 
-        if (e.key == "w"&&this.canJump) { //87
+        if (e.key == "w"&&self.canJump) { //87
+          console.log(self.canJump);
           console.log(self,'w');
           //self.startJumpTime = performance.now();
-          self.setYPos(self.yPos-15);
+          self.setYPos(self.yPos-5);
           self.yVelo = 5; //dummy value
           this.isJumping = true;
         };
