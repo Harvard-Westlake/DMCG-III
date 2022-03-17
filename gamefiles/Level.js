@@ -149,6 +149,7 @@ class Level {
         cheese.setXVelo(0 + cheese.getXVelo()/10);
         cheese.setYVelo(0);
         cheese.setIsJumping(false);
+        cheese.canJump = true;
         console.log("i EXIST");
       }
       else if (cheese.getX() + cheese.getWidth() >= otherObject.getX() && cheese.getX() + cheese.getWidth() <= otherObject.getX() + otherObject.getWidth()) {
@@ -162,17 +163,18 @@ class Level {
       cheese.setYVelo(0);
       cheese.setYPos(450);
       cheese.setIsJumping(false);
+      cheese.canJump=true;
       console.log("I also exist");
     }
 
     if (Math.floor(cheese.getX()) <= 0) {
       cheese.setXVelo(0);
-      cheese.setXPos(0);
+      cheese.setXPos(1);
     }
 
     if (Math.floor(cheese.getX() >= 850)) {
       cheese.setXVelo(0);
-      cheese.setXPos(850);
+      cheese.setXPos(849);
     }
   }
 }
