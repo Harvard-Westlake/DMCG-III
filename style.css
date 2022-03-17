@@ -1,0 +1,12 @@
+@font-face{
+  font-family:cheeseFont;
+  src:url(/fonts/CheeseAndMouse-g8P5.ttf);
+}
+html{
+  background-color:black;
+}
+h1,h6{
+  font-family:cheeseFont;
+  color:yellow;
+  text-align:center;
+}

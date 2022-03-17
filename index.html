@@ -3,38 +3,29 @@
 <html>
 
   <head>
-    <body>
-
-      <h1> WELCOME TO DEATH METAL CHEESE GRATER THREE </h1>
-      <br />
-
-      <h6> not to be mistaken with death metal cheese grater two </h6>
-      <!-- this is where the game will be animated onto; start button included in this skeleton --->
-      <canvas id="canvas" width="900" height="500" class = one></canvas>
-      <p> test <br /> please connect your code to this le canvas drawing shit needs to be basically handled </p>
-      <button type = "button" onclick="levels.loadLevel(0)"> PLAY BUTTON </button>
-
-    </body>
-    <script src = "./gamefiles/FileHandler.js"></script>
+  <!-- please link the website stylesheet in this tag; do not link elsewhere --->
+    <link rel="icon" type="image/x-icon" href="/gamefiles/images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src = "/gamefiles/FileHandler.js"></script>
     <!-- please link your code in this area; do not link elsewhere --->
-
-<script src="./gamefiles/bigCheese.js"> </script>
-    <script src="./gamefiles/Level.js"> </script>
-    <script src="./gamefiles/Platform.js"> </script>
-    <script src = "./gamefiles/Trap.js"> </script>
-    <script src = "./gamefiles/leftCheese.js"> </script>
-    <script src="./gamefiles/middleCheese.js"> </script>
-    <script src="./gamefiles/rightCheese.js"> </script>
-    <script src = "./gamefiles/levelManager.js"> </script>
-    <script src = "./gamefiles/goal.js"> </script>
-    <script>
-
-    </script>
-
-    <!-- please link the website stylesheet in this tag; do not link elsewhere --->
-    <link>
+    <script src="/gamefiles/bigCheese.js"></script>
+    <script src="/gamefiles/Level.js"> </script>
+    <script src="/gamefiles/Platform.js"> </script>
+    <script src = "/gamefiles/Trap.js"> </script>
+        <script src = "/gamefiles/goal.js"> </script>
+    <script src = "/gamefiles/leftCheese.js"> </script>
+    <script src = "/gamefiles/levelManager.js"> </script>
+    <title>DEATH METAL CHEESE GRATER THREE</title>
   </head>
-
-
-
+  <body>
+    <h1>DEATH METAL CHEESE GRATER III</h1>
+    <p id="button-text" style="text-align:center;color:yellow;">Click the cheese to start!</p>
+    <center><img id="button" src="/Assets/cheese.png" width="50" height="50" onclick="levels.loadLevel(0); document.getElementById('button').style.display='none'; document.getElementById('button-text').style.display='none';"></center>
+    <br />
+    <!--<h6> not to be mistaken with death metal cheese grater two </h6>-->
+    <!-- this is where the game will be animated onto; start button included in this skeleton --->
+    <center><canvas id="canvas" width="900" height="500" class = one></canvas></center>
+    <br />
+    <!--<button type = "button" onclick="levels.loadLevel(0)"> PLAY BUTTON </button>-->
+  </body>
 </html>
