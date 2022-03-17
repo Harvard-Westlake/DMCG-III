@@ -141,7 +141,7 @@ class bigCheese {
 
         };
         if (e.key == "a") { //65
-          //    console.log("a pressed");
+             console.log("a pressed");
           //  console.log('xVelo '+ self.xVelo);
 
           if (self.xVelo > 0) {
@@ -152,7 +152,7 @@ class bigCheese {
           }
         };
         if (e.key == "d") { //68
-          //console.log('d');
+          console.log('d');
           if (self.xVelo < 0) {
             self.xAccel = 0.05;
             //console.log("bruh");
@@ -161,6 +161,10 @@ class bigCheese {
           }
 
         };
+
+        if (e.key == "s") { //68
+          console.log("S key clicked");
+          }
       }
     });
   }
