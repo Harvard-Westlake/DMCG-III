@@ -181,7 +181,7 @@ class Level {
     if (cheese.getX == this.platform[goalIndex].getX() && cheese.getY == this.platform[goalIndex].getY())
     {
       console.log("You beat this level!");
-      LevelManager.loadLevel(nextLevel)
+      LevelManager.loadLevel(nextLevel);
     }
   }
 }
