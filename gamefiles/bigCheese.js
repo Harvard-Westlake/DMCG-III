@@ -35,6 +35,8 @@ class bigCheese {
     this.gForce = 0;
     this.isJumping = true;
     this.initializeKeyListeners();
+    this.LeftCheese = new leftCheese();
+    this.RightCheese = new rightCheese();
   }
   refresh() {
     if (this.enabled) {
