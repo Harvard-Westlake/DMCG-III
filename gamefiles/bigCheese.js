@@ -153,6 +153,7 @@ class bigCheese {
         };
         if (e.key == "d") { //68
           console.log('d');
+
           if (self.xVelo < 0) {
             self.xAccel = 0.05;
             //console.log("bruh");
