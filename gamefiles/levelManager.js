@@ -34,7 +34,7 @@ loadLevel(lvl){
     this.levels[l].massDisable();
     }
     else{
-      console.log(lvl==l);
+  
       this.levels[l].enable();
       this.levels[l].massEnable();
 

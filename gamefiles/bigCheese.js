@@ -138,6 +138,7 @@ class bigCheese {
           console.log(self,'w');
           //self.startJumpTime = performance.now();
           self.yVelo = 5; //dummy value
+          self.isJumping = true;
 
         };
         if (e.key == "a") { //65
