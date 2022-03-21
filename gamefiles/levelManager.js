@@ -1,7 +1,7 @@
 class LevelManager {
   constructor(){
-  this.plat1 = [ new Platform(100,100,0,0, false), new Platform(300,100,25,40, false)];
-  this.ches1 = [new bigCheese()];
+  this.plat1 = [ new Platform(100,400,10,10, false), new Platform(300,100,25,40, false)];
+  this.ches1 = [new bigCheese(250,200)];
   this.trap1 = [ new Trap(100,100,50,50, false)];
   this.goal1 = new Goal(400,50,5,5) ;
   this.lev1 = new Level (this.plat1, this.trap1, this.ches1);
@@ -34,7 +34,7 @@ loadLevel(lvl){
     this.levels[l].massDisable();
     }
     else{
-      console.log(lvl==l);
+
       this.levels[l].enable();
       this.levels[l].massEnable();
 
